@@ -64,7 +64,7 @@
   users.users.mjf = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = ["wheel" "media" "scanner" "lp"]; # Enable sudo for the user.
+    extraGroups = ["wheel" "media"]; # Enable sudo for the user.
   };
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
