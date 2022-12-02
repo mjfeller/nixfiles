@@ -14,19 +14,6 @@
     ./x11
   ];
 
-  sops.defaultSopsFile = ../secrets/secrets.yaml;
-  # This will automatically import SSH keys as age keys
-  sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
-  # This is using an age key that is expected to already be in the filesystem
-  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
-  # This will generate a new key if the key specified above does not exist
-  sops.age.generateKey = true;
-  # This is the actual specification of the secrets.
-  sops.secrets."wireguard/privatekey" = {};
-  sops.secrets."wireguard/presharedkey" = {};
-  sops.secrets."tailscale/authkey" = {};
-  sops.secrets."gcp/service-account-credentials.json" = {};
-
   # Add in the experimental nix command line tool and flakes. The nix
   # command 'should' be in the next release of nixos. As for when flakes
   # become mainlined who knows.
