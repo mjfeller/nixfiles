@@ -7,9 +7,11 @@
   ...
 }: {
   imports = [
-    ./disks
-    ./networking
     ./hardware-configuration.nix
+
+    ./media
+    ./networking
+    ./secrets
     ./wayland
     ./x11
   ];
