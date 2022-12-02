@@ -86,8 +86,8 @@
       export PATH=$HOME/.local/bin:$PATH
 
       update() {
-          sudo nixos-rebuild switch --flake '/home/mjf/.config/nixos' --impure
-          home-manager switch --flake '/home/mjf/.config/nixos#mjf'
+          sudo nixos-rebuild switch --flake "$HOME/.config/nixos" --impure
+          home-manager switch --flake "$HOME/.config/nixos#mjf"
       }
 
       if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
