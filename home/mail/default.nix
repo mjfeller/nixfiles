@@ -2,7 +2,26 @@
   config,
   pkgs,
   ...
-}: {
+}:
+let
+  offlineimap = "${pkgs.offlineimap}/bin/offlineimap";
+  notify-send = "${pkgs.libnotify}/bin/notify-send";
+  notmuch = "${pkgs.notmuch}/bin/notmuch";
+
+  mkStartScript = name: pkgs.writeShellScript "${name}.sh" ''
+      set -e
+
+      # TODO: add these to nix. pash depends on a bunch of stuff being
+      # available in my path and this breaks.
+      PATH=$PATH:/home/mjf/.nix-profile/bin:/home/mjf/.local/bin:/run/current-system/sw/bin
+
+      echo "Fetching user mail"
+      ${offlineimap} || ${notify-send} --urgency=critical "Failed to fetch email"
+      ${notmuch} new
+      inbox=$(${notmuch} search tag:unread | wc -l)
+      [ $inbox -eq 0 ] || ${notify-send} "You have $inbox new mail"
+     '';
+in {
   accounts.email = {
     accounts.mjf = {
       primary = true;
@@ -80,14 +99,14 @@
     from subprocess import check_output
 
     def get_pass(account):
-        return check_output("pash show " + account, shell=True).splitlines()[0]
+        return check_output("/home/mjf/.local/bin/pash show " + account, shell=True).splitlines()[0]
   '';
 
   xdg.configFile."offlineimap/config".text = ''
     [general]
     accounts = MfellerIo
-    metadata = $XDG_CONFIG_HOME/offlineimap/offlineimap
-    pythonfile = $XDG_CONFIG_HOME/offlineimap/get_settings.py
+    metadata = /home/mjf/.config/offlineimap/offlineimap
+    pythonfile = /home/mjf/.config/offlineimap/get_settings.py
 
     [Account MfellerIo]
     localrepository = MfellerLocal
@@ -103,7 +122,19 @@
 
     [Repository MfellerLocal]
     type = Maildir
-    localfolders = ~/.local/mail
+    localfolders = ~/.local/share/mail
     restoreatime = no
   '';
+
+  systemd.user.timers."mail-sync" = {
+    Timer.OnBootSec = "5m";
+    Timer.OnUnitActiveSec = "1h";
+    Install.WantedBy = [ "timers.target" ];
+  };
+
+  systemd.user.services."mail-sync" = {
+    Unit.Description = "Sync mail and notify the user";
+    Service.Type = "oneshot";
+    Service.ExecStart = "${mkStartScript "mail-sync"}";
+  };
 }
