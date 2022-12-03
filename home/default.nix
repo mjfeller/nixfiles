@@ -11,6 +11,8 @@
     ./dunst
     ./lf
     ./mail
+    ./sx
+    ./sxhkd
     ./media
     ./zsh
   ];

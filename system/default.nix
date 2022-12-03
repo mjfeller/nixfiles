@@ -13,6 +13,7 @@
     ./networking
     ./secrets
     ./wayland
+    ./x11
   ];
 
   # Add in the experimental nix command line tool and flakes. The nix
