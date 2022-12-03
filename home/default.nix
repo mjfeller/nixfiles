@@ -36,9 +36,9 @@
   xdg.mimeApps.defaultApplications = {
     "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
     "application/postscript" = "org.pwmt.zathura-pdf-mupdf.desktop";
-    "image/png" = "imv.desktop";
-    "image/jpeg" = "imv.desktop";
-    "image/gif" = "imv.desktop";
+    "image/png" = "sxiv.desktop";
+    "image/jpeg" = "sxiv.desktop";
+    "image/gif" = "sxiv.desktop";
     "video/x-matroska" = "mpv.desktop";
     "inode/directory" = "lf.desktop";
   };

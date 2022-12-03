@@ -12,7 +12,6 @@
     ./media
     ./networking
     ./secrets
-    ./wayland
     ./x11
   ];
 
@@ -35,9 +34,6 @@
 
   # Auto generate mandb caches so we can use apropos and man -k
   documentation.man.generateCaches = true;
-
-  # services.xserver.enable = true;
-  # services.xserver.displayManager.gdm.enable = true;
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #  Services
@@ -74,28 +70,27 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    pinentry
-    pinentry-qt
-    offlineimap
-    sops
     age
     bat
     dig
-    emacsPgtkNativeComp
+    emacsNativeComp
     file
     fzf
     git
     htop
-    imv
     inetutils
     lsof
     mediainfo
     netcat
     nmap
+    offlineimap
+    pinentry
+    pinentry-qt
     pipewire
     psmisc # provides killall
     pulsemixer
     ripgrep
+    sops
     unzip
     wget
     wireguard-tools
