@@ -34,6 +34,16 @@
   services.radarr.enable = true;
   services.radarr.group = "media";
 
+  # Lidarr is a music collection manager for Usenet and BitTorrent
+  # users. It can monitor multiple RSS feeds for new albums from your
+  # favorite artists and will interface with clients and indexers to
+  # grab, sort, and rename them.
+  services.lidarr.enable = true;
+  services.lidarr.group = "users";
+
+  # services.readarr.enable = true;
+  # services.readarr.group = "media";
+
   # NZBGet is a binary downloader, which downloads files from Usenet based on
   # information given in nzb-files.
   services.nzbget.enable = true;
@@ -90,6 +100,18 @@
       sslCertificateKey = "/var/lib/acme/margar.tv/key.pem";
       locations."/" = {
         proxyPass = "http://127.0.0.1:7878";
+        proxyWebsockets = true;
+        extraConfig =
+          "proxy_ssl_server_name on;"
+          + "proxy_pass_header Authorization;";
+      };
+    };
+    "lidarr.margar.tv" = {
+      forceSSL = true;
+      sslCertificate = "/var/lib/acme/margar.tv/cert.pem";
+      sslCertificateKey = "/var/lib/acme/margar.tv/key.pem";
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8686";
         proxyWebsockets = true;
         extraConfig =
           "proxy_ssl_server_name on;"
