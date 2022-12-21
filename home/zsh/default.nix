@@ -87,7 +87,7 @@
       export PATH=$HOME/.local/bin:$PATH
 
       update() {
-          sudo nixos-rebuild switch --flake "$HOME/.config/nixos" --impure
+          sudo nixos-rebuild switch --flake "$HOME/.config/nixos"
           home-manager switch --flake "$HOME/.config/nixos#mjf"
       }
 
