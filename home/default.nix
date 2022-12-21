@@ -17,11 +17,9 @@
     ./zsh
   ];
 
-  # TODO: Once 22.11 is working this can be used.
-  #
-  # home.username = "mjf";
-  # home.homeDirectory = "/home/mjf";
-  # home.stateVersion = "22.11";
+  home.username = "mjf";
+  home.homeDirectory = "/home/mjf";
+  home.stateVersion = "22.11";
 
   home.packages = with pkgs; [
     monero-gui
