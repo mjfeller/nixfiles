@@ -81,7 +81,7 @@
     age
     bat
     dig
-    emacsNativeComp
+    emacsUnstable
     file
     fzf
     git
