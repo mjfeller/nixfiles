@@ -38,6 +38,9 @@
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #  Services
 
+  services.transmission.enable = true;
+  services.transmission.group = "media";
+
   # Monero server for syncing the blockchain
   services.monero.enable = true;
 
@@ -70,6 +73,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    ipfs
+    transmission-remote-gtk
+
     age
     bat
     dig
