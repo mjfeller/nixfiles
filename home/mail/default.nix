@@ -56,7 +56,7 @@ in {
     #		names will be ignored, independent of its depth/location
     #		in the mail store.
     #
-    new.tags = ["unread" "ingox"];
+    new.tags = ["unread" "inbox"];
 
     # Search configuration
     #
