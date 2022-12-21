@@ -43,9 +43,6 @@
 
   services.jackett.enable = true;
 
-  # services.readarr.enable = true;
-  # services.readarr.group = "media";
-
   # NZBGet is a binary downloader, which downloads files from Usenet based on
   # information given in nzb-files.
   services.nzbget.enable = true;
@@ -91,6 +88,10 @@
 
   # ----------------------------------------------------------------------
   #  TLS Certificate Management
+
+  sops.secrets."gcp/service-account-credentials.json" = {
+    owner = "acme";
+  };
 
   # nginx must be in the acme group in order to access certificates
   users.users.nginx.extraGroups = ["acme"];
