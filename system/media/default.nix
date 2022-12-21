@@ -41,6 +41,8 @@
   services.lidarr.enable = true;
   services.lidarr.group = "users";
 
+  services.jackett.enable = true;
+
   # services.readarr.enable = true;
   # services.readarr.group = "media";
 
@@ -62,72 +64,27 @@
       forceSSL = true;
       sslCertificate = "/var/lib/acme/margar.tv/cert.pem";
       sslCertificateKey = "/var/lib/acme/margar.tv/key.pem";
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:5000";
-        proxyWebsockets = true;
-        extraConfig =
-          "proxy_ssl_server_name on;"
-          + "proxy_pass_header Authorization;";
-      };
-    };
-    "watch.margar.tv" = {
-      forceSSL = true;
-      sslCertificate = "/var/lib/acme/margar.tv/cert.pem";
-      sslCertificateKey = "/var/lib/acme/margar.tv/key.pem";
+
       locations."/" = {
         proxyPass = "http://127.0.0.1:8096";
-        proxyWebsockets = true;
-        extraConfig =
-          "proxy_ssl_server_name on;"
-          + "proxy_pass_header Authorization;";
       };
-    };
-    "sonarr.margar.tv" = {
-      forceSSL = true;
-      sslCertificate = "/var/lib/acme/margar.tv/cert.pem";
-      sslCertificateKey = "/var/lib/acme/margar.tv/key.pem";
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:8989";
-        proxyWebsockets = true;
-        extraConfig =
-          "proxy_ssl_server_name on;"
-          + "proxy_pass_header Authorization;";
+      locations."/radarr" = {
+        proxyPass = "http://localhost:7878/radarr";
       };
-    };
-    "radarr.margar.tv" = {
-      forceSSL = true;
-      sslCertificate = "/var/lib/acme/margar.tv/cert.pem";
-      sslCertificateKey = "/var/lib/acme/margar.tv/key.pem";
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:7878";
-        proxyWebsockets = true;
-        extraConfig =
-          "proxy_ssl_server_name on;"
-          + "proxy_pass_header Authorization;";
+      locations."/sonarr" = {
+        proxyPass = "http://localhost:8989/sonarr";
       };
-    };
-    "lidarr.margar.tv" = {
-      forceSSL = true;
-      sslCertificate = "/var/lib/acme/margar.tv/cert.pem";
-      sslCertificateKey = "/var/lib/acme/margar.tv/key.pem";
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:8686";
-        proxyWebsockets = true;
-        extraConfig =
-          "proxy_ssl_server_name on;"
-          + "proxy_pass_header Authorization;";
+      locations."/lidarr" = {
+        proxyPass = "http://localhost:8686/lidarr";
       };
-    };
-    "nzbget.margar.tv" = {
-      forceSSL = true;
-      sslCertificate = "/var/lib/acme/margar.tv/cert.pem";
-      sslCertificateKey = "/var/lib/acme/margar.tv/key.pem";
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:6789";
-        proxyWebsockets = true;
-        extraConfig =
-          "proxy_ssl_server_name on;"
-          + "proxy_pass_header Authorization;";
+      locations."/jackett" = {
+        proxyPass = "http://localhost:9117/jackett";
+      };
+      locations."/nzbget" = {
+        proxyPass = "http://localhost:6789/nzbget";
+      };
+      locations."/transmission" = {
+        proxyPass = "http://localhost:9091/transmission";
       };
     };
   };
@@ -146,7 +103,7 @@
     domain = "margar.tv";
     dnsProvider = "gcloud";
     credentialsFile = "/etc/secrets/certs.secret";
-    extraDomainNames = ["*.margar.tv"];
+    extraDomainNames = ["www.margar.tv"];
   };
 
   # Setup the credentials file used by certbot to manage TLS certificates.

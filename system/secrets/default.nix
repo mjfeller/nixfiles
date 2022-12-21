@@ -12,5 +12,7 @@
   sops.secrets."wireguard/privatekey" = {};
   sops.secrets."wireguard/presharedkey" = {};
   sops.secrets."tailscale/authkey" = {};
-  sops.secrets."gcp/service-account-credentials.json" = {};
+  sops.secrets."gcp/service-account-credentials.json" = {
+    owner = "acme";
+  };
 }
