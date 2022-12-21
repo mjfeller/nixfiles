@@ -35,6 +35,8 @@
   # Auto generate mandb caches so we can use apropos and man -k
   documentation.man.generateCaches = true;
 
+  security.polkit.enable = true;
+
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #  Services
 
