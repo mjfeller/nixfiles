@@ -2,13 +2,13 @@
   config,
   pkgs,
   ...
-}:
-let
+}: let
   offlineimap = "${pkgs.offlineimap}/bin/offlineimap";
   notify-send = "${pkgs.libnotify}/bin/notify-send";
   notmuch = "${pkgs.notmuch}/bin/notmuch";
 
-  mkStartScript = name: pkgs.writeShellScript "${name}.sh" ''
+  mkStartScript = name:
+    pkgs.writeShellScript "${name}.sh" ''
       set -e
 
       # TODO: add these to nix. pash depends on a bunch of stuff being
@@ -20,7 +20,7 @@ let
       ${notmuch} new
       inbox=$(${notmuch} search tag:unread | wc -l)
       [ $inbox -eq 0 ] || ${notify-send} "You have $inbox new mail"
-     '';
+    '';
 in {
   accounts.email = {
     accounts.mjf = {
@@ -129,7 +129,7 @@ in {
   systemd.user.timers."mail-sync" = {
     Timer.OnBootSec = "5m";
     Timer.OnUnitActiveSec = "1h";
-    Install.WantedBy = [ "timers.target" ];
+    Install.WantedBy = ["timers.target"];
   };
 
   systemd.user.services."mail-sync" = {
