@@ -40,11 +40,8 @@
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #  Services
 
-  services.transmission.enable = true;
-  services.transmission.group = "media";
-
   # Monero server for syncing the blockchain
-  services.monero.enable = true;
+  # services.monero.enable = true;
 
   # Enable sound.
   sound.enable = true;
@@ -75,18 +72,23 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    ipfs
-    transmission-remote-gtk
-
     age
     bat
+    cmake
     dig
+    direnv
+    emacs28Packages.vterm
     emacsUnstable
     file
     fzf
+    gcc
     git
+    gnumake
     htop
     inetutils
+    ipfs
+    libtool
+    libvterm
     lsof
     mediainfo
     netcat
@@ -95,10 +97,12 @@
     pinentry
     pinentry-qt
     pipewire
+    prismlauncher # Minecraft Launcher
     psmisc # provides killall
     pulsemixer
     ripgrep
     sops
+    transmission-remote-gtk
     unzip
     wget
     wireguard-tools
