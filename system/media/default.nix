@@ -3,13 +3,6 @@
   pkgs,
   ...
 }: {
-  };
-
-  # ----------------------------------------------------------------------
-  #  Media Mount
-
-  # Use systemd mount and automount units to automatically mount my
-  # external drive to my home directory when necessary.
   systemd.mounts = [
     {
       description = "Media Disk Mount";
@@ -20,18 +13,27 @@
         Options = "umask=007,uid=margartv,gid=media,x-systemd.idle-timeout=30s";
       };
     }
+    {
+      description = "TrueNAS Media Server Mount";
+      type = "cifs";
+      where = "/mnt/media";
+      what = "//192.168.3.10/mnt";
+      mountConfig = {
+        Options = "credentials=/run/secrets/smb/credentials,x-systemd.automount,noauto,uid=1001,gid=1002";
+      };
+    }
   ];
+
   systemd.automounts = [
     {
       description = "Media Disk Automount";
       wantedBy = ["multi-user.target"];
       where = "/var/media";
     }
+    {
+      description = "TrueNAS Media Server Automount";
+      wantedBy = ["multi-user.target"];
+      where = "/mnt/media";
+    }
   ];
-
-  networking.extraHosts = ''
-    192.168.3.200 margar.tv
-    192.168.3.200 www.margar.tv
-    192.168.3.200 search.margar.tv
-  '';
 }
