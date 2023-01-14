@@ -15,7 +15,6 @@
   environment.systemPackages = with pkgs; [
     dmenu
     st
-    sxiv
     xclip
     xorg.xkill
   ];
