@@ -5,16 +5,10 @@
 }: {
   imports = [
     # ./tailscale.nix
-    ./wireguard.nix
+    # ./wireguard.nix
   ];
 
   networking.hostName = "mjf";
-  networking.nameservers = ["8.8.8.8" "8.8.4.4"];
-
-  networking.firewall = {
-    enable = false;
-    trustedInterfaces = ["tailscale0"];
-    allowedUDPPorts = [config.services.tailscale.port];
-    allowedTCPPorts = [22 80 443];
-  };
+  networking.domain = "margar.org";
+  networking.nameservers = ["192.168.1.1" "8.8.8.8" "8.8.4.4"];
 }
