@@ -12,4 +12,5 @@
   sops.secrets."wireguard/privatekey" = {};
   sops.secrets."wireguard/presharedkey" = {};
   sops.secrets."tailscale/authkey" = {};
+  sops.secrets."smb/credentials" = {};
 }
