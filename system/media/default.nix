@@ -25,8 +25,7 @@
       description = "TrueNAS Media Server Mount";
       type = "cifs";
       where = "/var/media";
-      # what = "//nas.margar.org/mnt";
-      what = "//192.168.3.10/mnt";
+      what = "//nas.margar.org/mnt";
       mountConfig = {
         Options = "credentials=/run/secrets/smb/credentials,x-systemd.automount,noauto,uid=1001,gid=1002";
       };
