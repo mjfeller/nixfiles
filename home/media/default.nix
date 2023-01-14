@@ -16,7 +16,7 @@
   # protocol.
   services.mpd = {
     enable = true;
-    musicDirectory = "${config.home.homeDirectory}/music";
+    musicDirectory = "/var/media/music";
     playlistDirectory = "${config.xdg.configHome}/mpd/playlists";
     extraConfig = ''
       user "mjf"
@@ -32,7 +32,7 @@
   # Featureful ncurses based MPD client inspired by ncmpc
   programs.ncmpcpp = {
     enable = true;
-    mpdMusicDir = "${config.home.homeDirectory}/music";
+    mpdMusicDir = "/var/media/music";
     settings = {
       # directories
       ncmpcpp_directory = "${config.xdg.configHome}/ncmpcpp";
