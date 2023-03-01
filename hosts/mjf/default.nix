@@ -37,6 +37,10 @@
 
   security.polkit.enable = true;
 
+  networking.hostName = "mjf";
+  networking.domain = "margar.org";
+  networking.networkmanager.enable = true;
+
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #  Services
 
