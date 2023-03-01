@@ -85,14 +85,9 @@
     emacsUnstable
     file
     fzf
-    gcc
     git
-    gnumake
     htop
     inetutils
-    ipfs
-    libtool
-    libvterm
     lsof
     mediainfo
     netcat
@@ -101,7 +96,6 @@
     pinentry
     pinentry-qt
     pipewire
-    prismlauncher # Minecraft Launcher
     psmisc # provides killall
     pulsemixer
     ripgrep
