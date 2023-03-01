@@ -20,12 +20,13 @@ final: prev: {
     };
   });
 
+  # dwm = prev.dwm.overrideAttrs (old: { src = /home/mjf/development/dwm ;});
   dwm = prev.dwm.overrideAttrs (old: {
     src = prev.fetchFromGitHub {
       owner = "mjfeller";
       repo = "dwm";
-      rev = "e2f5118905551dcc1d216e4310e609d109601787";
-      sha256 = "sha256-EU9N6UR4y5zro/FvGskd5zamPbGyfZr7B4qw7KUpy2Y=";
+      rev = "c8c7c4703e6ae02d064c04987abf944d37fa2628";
+      sha256 = "sha256-Ch4trkTLJJ7w/C4lISyLborAgmSd4FBqKgWzArBMUTs=";
     };
   });
 
@@ -38,6 +39,7 @@ final: prev: {
     };
   });
 
+  # dwl = prev.dwl.overrideAttrs (old: { src = /home/mjf/development/dwl ;});
   dwl = prev.dwl.overrideAttrs (old: {
     src = prev.fetchFromGitHub {
       owner = "mjfeller";
