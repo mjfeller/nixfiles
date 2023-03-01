@@ -12,7 +12,6 @@
     ./lf
     ./mail
     ./sx
-    ./sxhkd
     ./media
     ./zsh
   ];

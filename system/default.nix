@@ -53,8 +53,12 @@
     wireplumber.enable = true;
   };
 
+  services.udev.packages = [ pkgs.yubikey-personalization ];
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  # services.pcscd.enable = true;
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #  Users
