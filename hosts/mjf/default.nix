@@ -9,10 +9,10 @@
   imports = [
     ./hardware-configuration.nix
 
-    ./media
-    ./networking
-    ./secrets
-    ./x11
+    ../../system/media
+    ../../system/networking
+    ../../system/secrets
+    ../../system/x11
   ];
 
   # Add in the experimental nix command line tool and flakes. The nix
@@ -57,18 +57,7 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
   # services.pcscd.enable = true;
-
-  # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  #  Users
-
-  # Define a user account. Don't forget to set a password with passwd
-  users.users.mjf = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = ["wheel" "media"]; # Enable sudo for the user.
-  };
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #  Packages

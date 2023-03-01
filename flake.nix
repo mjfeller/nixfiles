@@ -33,7 +33,7 @@
       inherit system;
 
       modules = [
-        ./system
+        ./hosts/mjf
         sops-nix.nixosModules.sops
       ];
     };
