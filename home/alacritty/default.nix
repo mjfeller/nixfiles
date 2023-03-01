@@ -129,7 +129,7 @@
 
         # Bright colors
         bright = {
-          black = "#191a1b";
+          black = "#535353";
           red = "#ef8b50";
           green = "#70b900";
           yellow = "#c0c530";
