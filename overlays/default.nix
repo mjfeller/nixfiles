@@ -30,12 +30,13 @@ final: prev: {
     };
   });
 
+  # st = prev.st.overrideAttrs (old: { src = /home/mjf/development/st ;});
   st = prev.st.overrideAttrs (old: {
     src = prev.fetchFromGitHub {
       owner = "mjfeller";
       repo = "st";
-      rev = "75a75952bd1c6be59cfdad20a1909337fb876dfa";
-      sha256 = "sha256-NDkzESmVgJp4dSgidPoAmafmaaeS+38QWBWemK1vpX4=";
+      rev = "1a056793320d925ba1d189ce25240b37add53635";
+      sha256 = "sha256-AHX0Igb+mqc78VUU7fcgwOgiJ609IiF099KO0LKtWyg=";
     };
   });
 
