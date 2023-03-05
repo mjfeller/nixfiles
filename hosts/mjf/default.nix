@@ -9,10 +9,12 @@
   imports = [
     ./hardware-configuration.nix
 
+    ../../system/guix
     ../../system/media
     ../../system/networking
     ../../system/secrets
     ../../system/x11
+    ../../system/users
   ];
 
   # Add in the experimental nix command line tool and flakes. The nix
@@ -75,7 +77,7 @@
     dig
     direnv
     emacs28Packages.vterm
-    emacsUnstable
+    emacsGit
     file
     fzf
     git

@@ -8,6 +8,7 @@
   # "Zsh Web Pages" sites.
   programs.zsh = {
     enable = true;
+    dotDir = ".config/zsh";
     history.size = 10000;
     history.path = "${config.xdg.cacheHome}/zsh/history";
     dotDir = ".config/zsh";
@@ -104,6 +105,12 @@
       export GPG_TTY="$(tty)"
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
       gpgconf --launch gpg-agent
+
+      GUIX_PROFILE="/home/mjf/.guix-profile"
+      . "$GUIX_PROFILE/etc/profile"
+
+      GUIX_PROFILE="/home/mjf/.config/guix/current"
+      . "$GUIX_PROFILE/etc/profile"
     '';
   };
 }
