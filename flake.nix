@@ -1,23 +1,34 @@
 {
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
-  inputs.home-manager.url = "github:nix-community/home-manager/release-22.11";
-  inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
-  inputs.emacs-overlay.url = "github:nix-community/emacs-overlay";
-  inputs.emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
-  inputs.sops-nix.url = "github:Mic92/sops-nix";
-  inputs.sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+  description = "Mark's systems";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-22.11-darwin";
+
+    darwin.url = "github:lnl7/nix-darwin/master";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager.url = "github:nix-community/home-manager/release-22.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+  };
 
   outputs = {
     nixpkgs,
+    nixpkgs-darwin,
+    darwin,
     home-manager,
     emacs-overlay,
     sops-nix,
     ...
   }: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-
+    x86_64-linx-pkgs = import nixpkgs {
+      system = "x86_64-linux";
       config.allowUnfree = true;
       overlays = [
         (import emacs-overlay)
@@ -25,27 +36,40 @@
       ];
     };
   in {
-    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
+    formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".alejandra;
 
-    # Provide system wide configuration for all things nixos.
-    nixosConfigurations.mjf = nixpkgs.lib.nixosSystem {
-      inherit pkgs;
-      inherit system;
-
-      modules = [
-        ./hosts/mjf
-        sops-nix.nixosModules.sops
-      ];
+    # P2X-3YZ -- Desktop
+    homeConfigurations.mjf = home-manager.lib.homeManagerConfiguration {
+      pkgs = x86_64-linx-pkgs;
+      modules = [./hosts/mjf/home.nix];
     };
 
-    # Provide the home manager configuration for managing user
-    # specific packages and dot files.
-    homeConfigurations.mjf = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+    nixosConfigurations.mjf = nixpkgs.lib.nixosSystem {
+      pkgs = x86_64-linx-pkgs;
+      system = "x86_64-linux";
+      modules = [./hosts/mjf/system.nix sops-nix.nixosModules.sops];
+    };
 
-      modules = [
-        ./home
-      ];
+    # P3X-984 -- 16" MacBook Pro 2019
+    homeConfigurations.p3x-984 = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs-darwin.legacyPackages.x86_64-darwin;
+      modules = [./hosts/P3X-984/home.nix];
+    };
+
+    darwinConfigurations.p3x-984 = darwin.lib.darwinSystem {
+      system = "x86_64-darwin";
+      modules = [./hosts/P3X-984/system.nix];
+    };
+
+    # P2S-4C3 -- Work Laptop MacBook Pro M1
+    homeConfigurations.p2s-4c3 = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs-darwin.legacyPackages.aarch64-darwin;
+      modules = [./hosts/P2S-4C3/home.nix];
+    };
+
+    darwinConfigurations.p2s-4c3 = darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [./hosts/P2S-4C3/system.nix];
     };
   };
 }

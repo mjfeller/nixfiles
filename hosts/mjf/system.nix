@@ -59,10 +59,14 @@
     wireplumber.enable = true;
   };
 
-  services.udev.packages = [ pkgs.yubikey-personalization ];
+  services.udev.packages = [pkgs.yubikey-personalization];
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
+  services.openssh.permitRootLogin = "yes";
+  services.openssh.passwordAuthentication = false;
+  services.openssh.kbdInteractiveAuthentication = false;
+
   # services.pcscd.enable = true;
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,52 +75,31 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    age
-    bat
-    cmake
-    dig
     direnv
-    emacs28Packages.vterm
-    emacsGit
-    file
-    fzf
-    git
-    htop
-    inetutils
-    lsof
-    mediainfo
-    netcat
-    nmap
-    offlineimap
     pinentry
     pinentry-qt
     pipewire
-    psmisc # provides killall
-    pulsemixer
-    ripgrep
     sops
-    transmission-remote-gtk
-    unzip
     wget
-    wireguard-tools
-    xdg-utils
-    zip
+
+    bazel_6
+    bazelisk
   ];
 
-  environment.variables = {
-    XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME = "$HOME/.local/share";
-    XDG_CACHE_HOME = "$HOME/.cache";
-    XDG_DOWNLOADS_DIR = "$HOME/downloads";
-    XDG_DOCUMENTS_DIR = "$HOME/documents";
-    XDG_CODE_DIR = "$HOME/development";
+  # environment.variables = {
+  #   XDG_CONFIG_HOME = "$HOME/.config";
+  #   XDG_DATA_HOME = "$HOME/.local/share";
+  #   XDG_CACHE_HOME = "$HOME/.cache";
+  #   XDG_DOWNLOADS_DIR = "$HOME/downloads";
+  #   XDG_DOCUMENTS_DIR = "$HOME/documents";
+  #   XDG_CODE_DIR = "$HOME/development";
 
-    EDITOR = "emacs";
-    VISIAL = "less";
-    # GNUPGHOME = "$XDG_DATA_HOME/gnupg";
-  };
+  #   EDITOR = "emacs";
+  #   VISIAL = "less";
+  #   # GNUPGHOME = "$XDG_DATA_HOME/gnupg";
+  # };
 
-  fonts.fonts = [pkgs.comic-mono];
+  # fonts.fonts = [pkgs.comic-mono];
 
   programs.zsh = {
     enable = true;
