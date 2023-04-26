@@ -1,1 +1,16 @@
-NixOS files for my desktop.
+Installation
+============
+
+To install, clone this repo to ~/.config/nixpkgs
+
+   git clone https://github.com/mjfeller/nixfiles ~/.config/nixpkgs
+
+Structure
+---------
+
+'home'        holds configuration used by home-mananger.
+'hosts'       holds top level entrypoints for host configuration for nixos,
+              nix-darwin, and home-manager.
+'overlays'    holds nixpkgs overlays for customized packages. Primarily for
+              personalized suckless utilities.
+system'       holds system configuration for nixos and nix-darwin.
