@@ -1,5 +1,0 @@
-  /Users/mjf/.config/nixpkgs/darwin/hosts/P3X-984:
-  drwxr-xr-x  3 mjf  staff   96 Apr  9 11:59 .
-  drwxr-xr-x  4 mjf  staff  128 Apr  9 11:58 ..
-C -rw-r--r--  1 mjf  staff  479 Apr  9 11:54 home.nix
-  -rw-r--r--  1 mjf  staff  479 Apr  9 11:54 system.nix
