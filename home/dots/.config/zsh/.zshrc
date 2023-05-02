@@ -24,7 +24,7 @@ HISTFILE=$XDG_CACHE_HOME/zsh/history
 SHELL_SESSION_HISTORY=0
 
 update() {
-    cd $HOME/.config/nixpkgs
+    cd $HOME/.config/nixfiles
 
     # Update nix darwin system
     name="$(hostname -s)"

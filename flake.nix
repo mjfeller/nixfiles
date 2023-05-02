@@ -6,10 +6,13 @@
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-22.11-darwin";
 
     darwin.url = "github:lnl7/nix-darwin/master";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
     home-manager.url = "github:nix-community/home-manager/release-22.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-darwin";
+
+    home-manager-darwin.url = "github:nix-community/home-manager/release-22.11";
+    home-manager-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +26,7 @@
     nixpkgs-darwin,
     darwin,
     home-manager,
+    home-manager-darwin,
     emacs-overlay,
     sops-nix,
     ...
@@ -51,23 +55,23 @@
     };
 
     # P3X-984 -- 16" MacBook Pro 2019
-    homeConfigurations.p3x-984 = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.P3X-984 = home-manager-darwin.lib.homeManagerConfiguration {
       pkgs = nixpkgs-darwin.legacyPackages.x86_64-darwin;
       modules = [./hosts/P3X-984/home.nix];
     };
 
-    darwinConfigurations.p3x-984 = darwin.lib.darwinSystem {
+    darwinConfigurations.P3X-984 = darwin.lib.darwinSystem {
       system = "x86_64-darwin";
       modules = [./hosts/P3X-984/system.nix];
     };
 
     # P2S-4C3 -- Work Laptop MacBook Pro M1
-    homeConfigurations.p2s-4c3 = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.P2S-4C3 = home-manager-darwin.lib.homeManagerConfiguration {
       pkgs = nixpkgs-darwin.legacyPackages.aarch64-darwin;
       modules = [./hosts/P2S-4C3/home.nix];
     };
 
-    darwinConfigurations.p2s-4c3 = darwin.lib.darwinSystem {
+    darwinConfigurations.P2S-4C3 = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [./hosts/P2S-4C3/system.nix];
     };
