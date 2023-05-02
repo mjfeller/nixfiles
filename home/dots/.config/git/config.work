@@ -1,0 +1,19 @@
+[user]
+    name = Mark Feller
+    email = mark@mfeller.io
+    signingkey = AD1123AE40116CBA25464FA10B54905CC58C10EE
+
+[commit]
+    gpgsign = true
+
+[gpg]
+    program = gpg
+
+[tag]
+    forceSignAnnotated = true
+
+[github]
+    user = mfeller-square
+
+[include]
+    path = $SQUARE_HOME/config_files/square/gitconfig

@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+echo "Fetching user mail"
+offlineimap || notify-send --urgency=critical "Failed to fetch email"
+
+notmuch new
+inbox=$(notmuch search tag:unread | wc -l)
+[ $inbox -eq 0 ] || notify-send "You have $inbox new mail"

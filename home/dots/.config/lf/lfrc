@@ -1,0 +1,31 @@
+set nodrawbox
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 10
+set period 1
+set nohidden
+set cleaner '~/.config/lf/cleaner'
+set previewer '~/.config/lf/scope'
+
+cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
+
+cmd delete ${{
+        clear
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "delete?[y/N]"
+	read ans
+	[ $ans = "y" ] && rm -rf $fx
+}}
+
+cmd openshell ${{
+	set -f
+	zsh
+}}
+
+map D delete
+map r push :rename<space>
+map <c-r> reload
+map <c-s> set hidden!
+map <enter> shell
+map S openshell

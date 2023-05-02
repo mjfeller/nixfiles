@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Create a dwm popup terminal running $1.
+
+if [ -z "$WAYLAND_DISPLAY" ]; then
+    st -c Center -g "${POPUP_COLUMNS:-80}x${POPUP_LINES:-24}" -e "$@" &
+else
+    alacritty -o window.dimensions.columns="${POPUP_COLUMNS:-80}" \
+              -o window.dimensions.lines="${POPUP_LINES:-24}" \
+              --class Center -e "$@" &
+fi

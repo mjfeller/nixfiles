@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case "$1" in
+    *.tar*) tar tf "$1" ;;
+    *.zip) unzip -l "$1" ;;
+    *) bat --color always "$1" ;;
+esac
+
+case "$(file --dereeference --bried --mime-type -- "$1")" in
+    image/* )mediainfo "$1" ;;
+    */pdf) mediainfo "$1" ;;
+esac

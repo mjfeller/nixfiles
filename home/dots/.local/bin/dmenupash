@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Select a password to copy
+
+DMENU=$(test -z "$WAYLAND_DISPLAY" && echo "dmenu" || echo "dmenu-wl")
+
+pash copy "$(pash list | sort | $DMENU)"

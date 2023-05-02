@@ -1,0 +1,3 @@
+#!/bin/sh
+
+notify-send -t 5000 "$(date +"%A, %-d %b %-I:%M")"

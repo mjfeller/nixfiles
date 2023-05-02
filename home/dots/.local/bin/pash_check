@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -e
+
+sread() {
+    printf '%s: ' "$2"
+
+    # Disable terminal printing while the user inputs their
+    # password. POSIX 'read' has no '-s' flag which would
+    # effectively do the same thing.
+    stty -echo
+    read -r "$1"
+    stty echo
+
+    printf '\n'
+}
+
+if [ -t 0 ]; then sread pass "Enter password"; else read -r pass; fi
+
+sha_pass=$(echo "$pass" | sha1sum | cut -d' ' -f1 |  tr '[:lower:]' '[:upper:]')
+sha_head=${sha_pass:0:5}
+sha_tail=${sha_pass:5}
+
+results=$(curl -s "https://api.pwnedpasswords.com/range/$sha_head" | grep "$sha_tail" | cut -d: -f2)
+[ "$results" = "" ] && echo "Password not found" || echo "Password found: $results"

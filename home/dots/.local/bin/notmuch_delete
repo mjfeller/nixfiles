@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+archive() {
+    mv -f $1 $HOME/mail/archive/
+}
+
+notmuch search --output=files tag:deleted | tr '\n' '\0' | xargs -0 -L 1 rm
+notmuch search --output=files tag:archived | xargs archive
+notmuch new

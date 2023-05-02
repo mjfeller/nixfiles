@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+emacsclient -c --frame-parameters="((width . 120) (height . 60))" -e "(notmuch)"

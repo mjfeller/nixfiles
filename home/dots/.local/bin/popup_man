@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Select a manpage and spawn a popup terminal with it.
+
+unset MANWIDTH
+DMENU=$(test -z "$WAYLAND_DISPLAY" && echo "dmenu" || echo "dmenu-wl")
+manpage=$(man -k . | $DMENU -i -l 20 | awk '{ print $1 }')
+[ -z $manpage ] || POPUP_COLUMNS=100 POPUP_LINES=45 popup man $manpage

@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# A dmenu prompt script.
+# Gives a demu prompt labeled with $1 to perform command $2.
+# For example:
+# `./prompt "Do you want to shutdown?" "shutdown -h now"`
+
+DMENU=$(test -z "$WAYLAND_DISPLAY" && echo "dmenu" || echo "dmenu-wl")
+
+[ "$(printf "No\\nYes" | $DMENU -i -l 1 -p "$1")" = "Yes" ] && $2

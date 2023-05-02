@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+for pass in $(pash list); do
+    echo "Checking $pass"
+    pash show "$pass" | pash_check
+done
