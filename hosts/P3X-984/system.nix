@@ -26,13 +26,30 @@
     bazel_6
     cargo
     cmake
+    curl
+    dig
+    direnv
+    fd
+    file
+    fzf
+    git
     go
     home-manager
+    home-manager
+    htop
+    inetutils
+    ispell
+    jq
+    lf
+    mediainfo
     notmuch
+    ripgrep
     rust-analyzer
     rustc
     rustfmt
     transmission
+    tree
+    watch
   ];
 
   # Auto upgrade nix package and the daemon service.
