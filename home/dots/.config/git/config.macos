@@ -3,9 +3,6 @@
     email = mark@mfeller.io
     signingkey = 76AABB34AAFE630A6F571F6B3A6412B0CE2F05A8
 
-[url "git@github.com/"]
-    insteadOf = https://github.com/
-
 [commit]
     gpgsign = true
 
