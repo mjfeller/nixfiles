@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
   home.file = {
-    ".config/git/config".source = ../dots/.config/git/config.work;
+    ".config/git/config".source = ./files/config.work;
   };
 }

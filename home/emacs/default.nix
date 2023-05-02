@@ -1,5 +1,6 @@
 { config, pkgs, ... }: {
   home.file = {
-    ".local/share/emacs".source = ../dots/.local/share/emacs;
+    ".local/share/emacs".source = ./files;
+    ".local/share/emacs".recursive = true;
   };
 }
