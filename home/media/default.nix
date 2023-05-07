@@ -9,9 +9,6 @@
 
     ".config/ncmpcpp".source = ./files/ncmpcpp;
     ".config/ncmpcpp".recursive = true;
-
-    ".config/zathura".source = ./files/zathura;
-    ".config/zathura".recursive = true;
   };
 
   # mpv is a free (as in freedom) media player for the command line. It
