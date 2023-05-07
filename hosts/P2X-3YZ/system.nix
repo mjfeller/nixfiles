@@ -9,7 +9,6 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../system/guix
     ../../system/media
     ../../system/networking
     ../../system/secrets
