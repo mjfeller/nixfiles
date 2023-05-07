@@ -14,6 +14,7 @@
 
   environment.systemPackages = with pkgs; [
     dmenu
+    killall
     st
     xclip
     xorg.xkill
