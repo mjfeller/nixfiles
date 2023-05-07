@@ -39,7 +39,7 @@
 
   security.polkit.enable = true;
 
-  networking.hostName = "mjf";
+  networking.hostName = "P2X-3YZ";
   networking.domain = "margar.org";
   networking.networkmanager.enable = true;
 
@@ -75,6 +75,33 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    age
+    bat
+    file
+    fzf
+    git
+    graphviz
+    htop
+    imv
+    lf
+    lsof
+    mpd
+    mpv
+    ncmpcpp
+    netcat
+    nmap
+    notmuch
+    offlineimap
+    pulsemixer
+    ripgrep
+    sx
+    sxiv
+    unzip
+    xclip
+    zathura
+    zip
+    zsh
+
     direnv
     pinentry
     pinentry-qt
@@ -86,20 +113,7 @@
     bazelisk
   ];
 
-  # environment.variables = {
-  #   XDG_CONFIG_HOME = "$HOME/.config";
-  #   XDG_DATA_HOME = "$HOME/.local/share";
-  #   XDG_CACHE_HOME = "$HOME/.cache";
-  #   XDG_DOWNLOADS_DIR = "$HOME/downloads";
-  #   XDG_DOCUMENTS_DIR = "$HOME/documents";
-  #   XDG_CODE_DIR = "$HOME/development";
-
-  #   EDITOR = "emacs";
-  #   VISIAL = "less";
-  #   # GNUPGHOME = "$XDG_DATA_HOME/gnupg";
-  # };
-
-  # fonts.fonts = [pkgs.comic-mono];
+  fonts.fonts = [pkgs.comic-mono];
 
   programs.zsh = {
     enable = true;

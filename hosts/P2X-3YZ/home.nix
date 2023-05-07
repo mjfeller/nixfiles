@@ -7,13 +7,19 @@
   programs.home-manager.enable = true;
 
   imports = [
-    # ./alacritty
-    # ./dunst
-    # ./lf
-    # ./mail
-    # ./sx
-    # ./media
-    # ./zsh
+    ../../home/alacritty
+    ../../home/bin
+    ../../home/dunst
+    ../../home/emacs
+    ../../home/git
+    ../../home/gpg
+    ../../home/lf
+    ../../home/mail
+    ../../home/sx
+    ../../home/media
+    ../../home/xdg
+    ../../home/zathura
+    ../../home/zsh
   ];
 
   home.username = "mjf";

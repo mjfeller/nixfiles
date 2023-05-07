@@ -43,15 +43,15 @@
     formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".alejandra;
 
     # P2X-3YZ -- Desktop
-    homeConfigurations.mjf = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.P2X-3YZ = home-manager.lib.homeManagerConfiguration {
       pkgs = x86_64-linx-pkgs;
-      modules = [./hosts/mjf/home.nix];
+      modules = [./hosts/P2X-3YZ/home.nix];
     };
 
-    nixosConfigurations.mjf = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.P2X-3YZ = nixpkgs.lib.nixosSystem {
       pkgs = x86_64-linx-pkgs;
       system = "x86_64-linux";
-      modules = [./hosts/mjf/system.nix sops-nix.nixosModules.sops];
+      modules = [./hosts/P2X-3YZ/system.nix sops-nix.nixosModules.sops];
     };
 
     # P3X-984 -- 16" MacBook Pro 2019
