@@ -75,5 +75,29 @@
       system = "aarch64-darwin";
       modules = [./hosts/P2S-4C3/system.nix];
     };
+
+    # P3R-272 -- Media Fetcher
+    homeConfigurations.P3R-272 = home-manager.lib.homeManagerConfiguration {
+      pkgs = x86_64-linx-pkgs;
+      modules = [./hosts/P3R-272/home.nix];
+    };
+
+    nixosConfigurations.P3R-272 = nixpkgs.lib.nixosSystem {
+      pkgs = x86_64-linx-pkgs;
+      system = "x86_64-linux";
+      modules = [./hosts/P3R-272/system.nix sops-nix.nixosModules.sops];
+    };
+
+    # P4X-347 -- Media Player Server
+    homeConfigurations.P4X-347 = home-manager.lib.homeManagerConfiguration {
+      pkgs = x86_64-linx-pkgs;
+      modules = [./hosts/P4X-347/home.nix];
+    };
+
+    nixosConfigurations.P4X-347 = nixpkgs.lib.nixosSystem {
+      pkgs = x86_64-linx-pkgs;
+      system = "x86_64-linux";
+      modules = [./hosts/P4X-347/system.nix sops-nix.nixosModules.sops];
+    };
   };
 }
