@@ -24,15 +24,22 @@ HISTFILE=$XDG_CACHE_HOME/zsh/history
 SHELL_SESSION_HISTORY=0
 
 update() {
-    cd $HOME/.config/nixfiles
-
-    # Update nix darwin system
     name="$(hostname -s)"
-    nix build ".#darwinConfigurations.${name}.system"
-    ./result/sw/bin/darwin-rebuild switch --flake .
-
-    # Update nix home manager
-    home-manager switch --flake ".#${name}"
+    case "$(uname -s)" in
+        Linux*)
+            sudo nixos-rebuild switch --flake "$HOME/.config/nixfiles"
+            home-manager switch --flake "$HOME/.config/nixfiles#${name}"
+            ;;
+        Darwin*)
+            nix build ".#darwinConfigurations.${name}.system"
+            ./result/sw/bin/darwin-rebuild switch --flake $HOME/.config/nixfiles
+            home-manager switch --flake "$HOME/.config/nixfiles#${name}"
+            ;;
+        *)
+            echo "Could not detect OS"
+            exit 1
+            ;;
+    esac
 }
 
 if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
