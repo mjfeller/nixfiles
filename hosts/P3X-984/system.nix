@@ -26,6 +26,7 @@
     bazel_6
     cargo
     cmake
+    comic-mono
     curl
     dig
     direnv
@@ -34,7 +35,6 @@
     fzf
     git
     go
-    home-manager
     home-manager
     htop
     inetutils
