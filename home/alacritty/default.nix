@@ -49,7 +49,7 @@
 
         # Window decorations
         # Setting this to false will result in window without borders and title bar.
-        decorations = "None";
+        decorations = "transparent";
       };
 
       # When true, bold text is drawn using the bright variant of colors.
