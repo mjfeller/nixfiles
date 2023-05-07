@@ -6,8 +6,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
-    ../../system/networking/wireguard.nix
-    ../../system/media/downloaders.nix
+    ../../system/media/jellyfin.nix
     ../../system/media/mounts.nix
     ../../system/users
   ];
@@ -17,7 +16,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "dl";
+  networking.hostName = "P4X-347";
   networking.domain = "margar.org";
   networking.networkmanager.enable = true;
 }
