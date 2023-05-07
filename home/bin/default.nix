@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   home.file = {
     # shell scripts
     ".local/bin".source = ./files;
