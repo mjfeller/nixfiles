@@ -27,7 +27,7 @@ export PASH_CLIP=pbcopy
 export PASH_TIMEOUT=off
 
 # GPG config
-export GNUPGHOME=$XDG_DATA_HOME/gnupg
+# export GNUPGHOME=$XDG_DATA_HOME/gnupg
 
 # Notmuch config
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/config
