@@ -82,6 +82,7 @@
     graphviz
     htop
     imv
+    ledger
     lf
     lsof
     mpd
