@@ -7,7 +7,6 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ../../home/alacritty
     ../../home/bin
     ../../home/dunst
     ../../home/emacs
