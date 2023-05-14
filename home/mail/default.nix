@@ -116,8 +116,8 @@ in {
     type = IMAP
     remotehost = mail.mfeller.io
     remoteuser = mark
-    remotepasseval = get_pass("bsd-mark")
-    sslcacertfile = /etc/ssl/certs/ca-bundle.crt
+    remotepasseval = get_pass("prog/bsd-mark")
+    sslcacertfile = /etc/ssl/certs/ca-certificates.crt
     ssl = yes
 
     [Repository MfellerLocal]
