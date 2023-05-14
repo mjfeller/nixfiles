@@ -1,12 +1,10 @@
 Installation
-============
 
 To install, clone this repo to ~/.config/nixfiles
 
    git clone https://github.com/mjfeller/nixfiles ~/.config/nixfiles
 
-Structure
----------
+There are several subdirectories:
 
 'home'        holds configuration used by home-mananger.
 'hosts'       holds top level entrypoints for host configuration for nixos,
