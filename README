@@ -12,3 +12,8 @@ There are several subdirectories:
 'overlays'    holds nixpkgs overlays for customized packages. Primarily for
               personalized suckless utilities.
 system'       holds system configuration for nixos and nix-darwin.
+
+I am also a heavy user of emacs and manage my emacs configuration through a
+separate repository out https://github.com/mjfeller/nixfiles. I found that
+managing emacs through nix configuration was not practical and have thus kept it
+completely separate.
