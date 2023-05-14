@@ -23,8 +23,11 @@ export GOPATH=$XDG_CODE_DIR/go
 export PATH=$GOPATH/bin:$PATH
 
 # Pash config
-export PASH_CLIP=pbcopy
 export PASH_TIMEOUT=off
+case "$(uname -s)" in
+    Linux*)  export PASH_CLIP="xclip -i -selection clipboard" ;;
+    Darwin*) export PASH_CLIP="pbcopy"   ;;
+esac
 
 # GPG config
 # export GNUPGHOME=$XDG_DATA_HOME/gnupg
