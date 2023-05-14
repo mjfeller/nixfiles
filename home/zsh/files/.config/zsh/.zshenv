@@ -33,7 +33,7 @@ esac
 # export GNUPGHOME=$XDG_DATA_HOME/gnupg
 
 # Notmuch config
-export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/config
+export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/default/config
 
 export LC_ALL=C
 
