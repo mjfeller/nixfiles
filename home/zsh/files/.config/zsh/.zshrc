@@ -24,16 +24,17 @@ HISTFILE=$XDG_CACHE_HOME/zsh/history
 SHELL_SESSION_HISTORY=0
 
 update() {
+    nixfiles="${HOME}/.config/nixfiles"
     name="$(hostname -s)"
     case "$(uname -s)" in
         Linux*)
-            sudo nixos-rebuild switch --flake "$HOME/.config/nixfiles"
-            home-manager switch --flake "$HOME/.config/nixfiles#${name}"
+            sudo nixos-rebuild switch --flake "${nixfiles}"
+            home-manager switch --flake "${nixfiles}#${name}"
             ;;
         Darwin*)
-            nix build ".#darwinConfigurations.${name}.system"
-            ./result/sw/bin/darwin-rebuild switch --flake $HOME/.config/nixfiles
-            home-manager switch --flake "$HOME/.config/nixfiles#${name}"
+            nix build "${nixfiles}#darwinConfigurations.${name}.system"
+            ./result/sw/bin/darwin-rebuild switch --flake ${nixfiles}
+            home-manager switch --flake "${nixfiles}#${name}"
             ;;
         *)
             echo "Could not detect OS"
