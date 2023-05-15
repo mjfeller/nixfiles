@@ -55,12 +55,12 @@
     };
 
     # P3X-984 -- 16" MacBook Pro 2019
-    homeConfigurations.P3X-984 = home-manager-darwin.lib.homeManagerConfiguration {
+    homeConfigurations.p3x-984 = home-manager-darwin.lib.homeManagerConfiguration {
       pkgs = nixpkgs-darwin.legacyPackages.x86_64-darwin;
       modules = [./hosts/P3X-984/home.nix];
     };
 
-    darwinConfigurations.P3X-984 = darwin.lib.darwinSystem {
+    darwinConfigurations.p3x-984 = darwin.lib.darwinSystem {
       system = "x86_64-darwin";
       modules = [./hosts/P3X-984/system.nix];
     };
