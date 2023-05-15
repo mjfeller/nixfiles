@@ -66,12 +66,12 @@
     };
 
     # P2S-4C3 -- Work Laptop MacBook Pro M1
-    homeConfigurations.P2S-4C3 = home-manager-darwin.lib.homeManagerConfiguration {
+    homeConfigurations.p2s-4c3 = home-manager-darwin.lib.homeManagerConfiguration {
       pkgs = nixpkgs-darwin.legacyPackages.aarch64-darwin;
       modules = [./hosts/P2S-4C3/home.nix];
     };
 
-    darwinConfigurations.P2S-4C3 = darwin.lib.darwinSystem {
+    darwinConfigurations.p2s-4c3 = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       modules = [./hosts/P2S-4C3/system.nix];
     };
