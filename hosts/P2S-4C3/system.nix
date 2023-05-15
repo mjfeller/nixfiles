@@ -5,7 +5,6 @@
 }: {
   imports = [
     ../../system/macos
-    ../../system/ssh/ssh_known_hosts.nix
   ];
 
   # Setup primary user
