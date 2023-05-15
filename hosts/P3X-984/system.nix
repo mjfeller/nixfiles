@@ -40,6 +40,7 @@
     inetutils
     ispell
     jq
+    ledger
     lf
     mediainfo
     notmuch
