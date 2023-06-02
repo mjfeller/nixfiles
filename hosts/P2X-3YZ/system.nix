@@ -114,7 +114,7 @@
     bazelisk
     transmission-remote-gtk
 
-    ((emacsPackagesFor emacsUnstable).emacsWithPackages (epkgs: [
+    ((emacsPackagesFor emacs-unstable).emacsWithPackages (epkgs: [
       epkgs.bind-key
       epkgs.company
       epkgs.company-c-headers
