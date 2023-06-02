@@ -4,16 +4,16 @@
   ...
 }: {
   networking.wg-quick.interfaces = {
-    cs0 = {
-      address = ["10.10.6.71"];
-      dns = ["10.31.33.8"];
-      privateKeyFile = "/run/secrets/wireguard/privatekey";
+    mullvad0 = {
+      address = ["10.66.156.220/32" "fc00:bbbb:bbbb:bb01::3:9cdb/128"];
+      dns = ["10.64.0.1"];
+      privateKeyFile = "/etc/privatekey-mullvad";
+      postUp = "ip rule add from 192.168.0.0/16 table main";
       peers = [
         {
-          publicKey = "Au/fpRa/6gXHsi1ek0f5ro59EbTXS3orn/wiLa5L1UM=";
-          presharedKeyFile = "/run/secrets/wireguard/presharedkey";
-          allowedIPs = ["0.0.0.0/0"];
-          endpoint = "iceland.cstorm.is:443";
+          publicKey = "Qn1QaXYTJJSmJSMw18CGdnFiVM0/Gj/15OdkxbXCSG0=";
+          allowedIPs = ["0.0.0.0/0" "::0/0"];
+          endpoint = "193.138.218.220:51820";
           persistentKeepalive = 25;
         }
       ];
