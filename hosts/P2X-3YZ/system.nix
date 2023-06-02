@@ -46,7 +46,8 @@
   #  Services
 
   # Monero server for syncing the blockchain
-  # services.monero.enable = true;
+  services.monero.enable = true;
+  services.monero.dataDir = "/var/lib/monero";
 
   # Enable sound.
   sound.enable = true;
@@ -111,6 +112,7 @@
 
     bazel_6
     bazelisk
+    transmission-remote-gtk
 
     ((emacsPackagesFor emacsUnstable).emacsWithPackages (epkgs: [
       epkgs.bind-key
