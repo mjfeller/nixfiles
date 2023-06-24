@@ -33,7 +33,7 @@ update() {
             ;;
         Darwin*)
             nix build "${nixfiles}#darwinConfigurations.${name}.system"
-            ./result/sw/bin/darwin-rebuild switch --flake ${nixfiles}
+            ${nixfiles}/result/sw/bin/darwin-rebuild switch --flake ${nixfiles}
             home-manager switch --flake "${nixfiles}#${name}"
             ;;
         *)
