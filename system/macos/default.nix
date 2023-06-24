@@ -24,7 +24,7 @@
   system.defaults.dock.tilesize = 64;
 
   system.defaults.trackpad.Clicking = true;
-  system.defaults.trackpad.Dragging = true;
+  system.defaults.trackpad.Dragging = false;
   system.defaults.trackpad.TrackpadThreeFingerDrag = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
