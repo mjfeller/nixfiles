@@ -18,7 +18,7 @@
   # though.
   services.dunst = {
     enable = true;
-    waylandDisplay = "wayland-0";
+    # waylandDisplay = "wayland-0";
     settings = {
       global = {
         font = "Comic Mono 10";
