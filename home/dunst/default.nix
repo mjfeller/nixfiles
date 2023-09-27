@@ -171,7 +171,7 @@
       urgency_critical = {
         frame_color = "#cc241d";
         foreground = "#cc241d";
-        background = "#282828";
+        background = "#000000";
         timeout = 8;
       };
     };
