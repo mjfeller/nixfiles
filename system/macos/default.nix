@@ -18,7 +18,7 @@
   system.defaults.dock.mineffect = "scale";
   system.defaults.dock.minimize-to-application = true;
   system.defaults.dock.orientation = "left";
-  system.defaults.dock.show-process-indicators = false;
+  system.defaults.dock.show-process-indicators = true;
   system.defaults.dock.show-recents = false;
   system.defaults.dock.static-only = true;
   system.defaults.dock.tilesize = 64;
