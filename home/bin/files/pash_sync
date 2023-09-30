@@ -1,4 +1,0 @@
-#!/bin/sh
-
-rsync -rtuv ~/.local/share/pash desktop:~/.local/share
-rsync -rtuv desktop:~/.local/share/pash ~/.local/share
