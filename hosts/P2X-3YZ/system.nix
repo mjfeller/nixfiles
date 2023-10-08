@@ -9,21 +9,15 @@
   imports = [
     ./hardware-configuration.nix
 
+    ../../system/audio
+    ../../system/emacs
     ../../system/media
     ../../system/networking
+    ../../system/nix
     ../../system/secrets
     ../../system/x11
     ../../system/users
   ];
-
-  # Add in the experimental nix command line tool and flakes. The nix
-  # command 'should' be in the next release of nixos. As for when flakes
-  # become mainlined who knows.
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.settings.auto-optimise-store = true;
-  nix.gc.automatic = true;
-  nix.gc.dates = "weekly";
-  nix.gc.options = "--delete-older-than 30d";
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -49,16 +43,6 @@
   services.monero.enable = true;
   services.monero.dataDir = "/var/lib/monero";
 
-  # Enable sound.
-  sound.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
-
   services.udev.packages = [pkgs.yubikey-personalization];
 
   # Enable the OpenSSH daemon.
@@ -75,104 +59,24 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    age
-    bat
     file
     fzf
     git
     graphviz
     htop
-    imv
-    ledger
-    lf
     lsof
-    mpd
-    mpv
-    ncmpcpp
-    netcat
-    nmap
-    notmuch
-    offlineimap
-    pulsemixer
     ripgrep
-    sx
     sxiv
     unzip
-    xclip
-    zathura
     zip
-    zsh
 
-    direnv
     pinentry
     pinentry-qt
-    pipewire
-    sops
-    wget
-
-    bazel_6
-    bazelisk
-    transmission-remote-gtk
-
-    ((emacsPackagesFor emacs-unstable).emacsWithPackages (epkgs: [
-      epkgs.bind-key
-      epkgs.company
-      epkgs.company-c-headers
-      epkgs.comment-dwim-2
-      epkgs.consult
-      epkgs.csv-mode
-      epkgs.direnv
-      epkgs.dockerfile-mode
-      epkgs.elfeed
-      epkgs.embark
-      epkgs.embark-consult
-      epkgs.evil
-      epkgs.evil-goggles
-      epkgs.evil-surround
-      epkgs.ggtags
-      epkgs.git-timemachine
-      epkgs.go-mode
-      epkgs.helpful
-      epkgs.highlight-indentation
-      epkgs.ledger-mode
-      epkgs.logos
-      epkgs.macrostep
-      epkgs.magit
-      epkgs.minions
-      epkgs.modus-themes
-      epkgs.multi-vterm
-      epkgs.multiple-cursors
-      epkgs.nix-mode
-      epkgs.notmuch
-      epkgs.olivetti
-      epkgs.orderless
-      epkgs.org-bullets
-      epkgs.org-fancy-priorities
-      epkgs.paren-face
-      epkgs.racer
-      epkgs.restclient
-      epkgs.rg
-      epkgs.rust-mode
-      epkgs.tree-sitter
-      epkgs.tree-sitter-langs
-      epkgs.use-package
-      epkgs.vertico
-      epkgs.vterm
-      epkgs.yaml-mode
-      epkgs.yasnippet
-    ]))
   ];
 
   fonts.fonts = [pkgs.comic-mono];
 
-  programs.zsh = {
-    enable = true;
-    ohMyZsh = {
-      enable = true;
-      plugins = ["git"];
-      theme = "eastwood";
-    };
-  };
+  programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
