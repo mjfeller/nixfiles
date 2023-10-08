@@ -30,6 +30,16 @@
 
   home.packages = with pkgs; [
     brave
+    file
+    fzf
+    git
+    graphviz
+    htop
+    lsof
     monero-gui
+    ripgrep
+    sxiv
+    unzip
+    zip
   ];
 }
