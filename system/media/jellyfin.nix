@@ -3,11 +3,6 @@
   pkgs,
   ...
 }: {
-  # Ombi is your friendly media request tool, automatically syncs with your
-  # media servers
-  services.ombi.enable = true;
-  services.ombi.group = "margartv";
-
   # Jellyfin is a Free Software Media System that puts you in control of
   # managing and streaming your media.
   services.jellyfin.enable = true;
@@ -47,8 +42,8 @@
   services.nginx.enable = true;
   services.nginx.recommendedProxySettings = true;
 
-  # Setup an nginx proxy virtual hosts for both Ombi and Jellyfin for margar.tv
-  # with TLS certificates managed by certbot.
+  # Setup an nginx proxy virtual hosts for margar.tv with TLS certificates
+  # managed by certbot.
   services.nginx.virtualHosts = {
     "www.margar.tv" = {
       forceSSL = true;
