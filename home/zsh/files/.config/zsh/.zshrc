@@ -29,7 +29,6 @@ update() {
     case "$(uname -s)" in
         Linux*)
             sudo nixos-rebuild switch --flake "${nixfiles}"
-            home-manager switch --flake "${nixfiles}#${name}"
             ;;
         Darwin*)
             nix build "${nixfiles}#darwinConfigurations.${name}.system"

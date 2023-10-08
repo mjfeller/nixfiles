@@ -30,74 +30,16 @@
     emacs-overlay,
     sops-nix,
     ...
-  }: let
-    x86_64-linx-pkgs = import nixpkgs {
-      system = "x86_64-linux";
-      config.allowUnfree = true;
-      overlays = [
-        (import emacs-overlay)
-        (import ./overlays)
-      ];
-    };
-  in {
+  } @ inputs: {
     formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".alejandra;
 
-    # P2X-3YZ -- Desktop
-    homeConfigurations.P2X-3YZ = home-manager.lib.homeManagerConfiguration {
-      pkgs = x86_64-linx-pkgs;
-      modules = [./hosts/P2X-3YZ/home.nix];
-    };
+    # Linux
+    nixosConfigurations.P2X-3YZ = import ./hosts/P2X-3YZ inputs; # P2X-3YZ -- Desktop
+    nixosConfigurations.P3R-272 = import ./hosts/P3R-272 inputs; # P3R-272 -- Media Fetcher
+    nixosConfigurations.P4X-347 = import ./hosts/P4X-347 inputs; # P4X-347 -- Media Player Server
 
-    nixosConfigurations.P2X-3YZ = nixpkgs.lib.nixosSystem {
-      pkgs = x86_64-linx-pkgs;
-      system = "x86_64-linux";
-      modules = [./hosts/P2X-3YZ/system.nix sops-nix.nixosModules.sops];
-    };
-
-    # P3X-984 -- 16" MacBook Pro 2019
-    homeConfigurations.p3x-984 = home-manager-darwin.lib.homeManagerConfiguration {
-      pkgs = nixpkgs-darwin.legacyPackages.x86_64-darwin;
-      modules = [./hosts/P3X-984/home.nix];
-    };
-
-    darwinConfigurations.p3x-984 = darwin.lib.darwinSystem {
-      system = "x86_64-darwin";
-      modules = [./hosts/P3X-984/system.nix];
-    };
-
-    # P2S-4C3 -- Work Laptop MacBook Pro M1
-    homeConfigurations.p2s-4c3 = home-manager-darwin.lib.homeManagerConfiguration {
-      pkgs = nixpkgs-darwin.legacyPackages.aarch64-darwin;
-      modules = [./hosts/P2S-4C3/home.nix];
-    };
-
-    darwinConfigurations.p2s-4c3 = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      modules = [./hosts/P2S-4C3/system.nix];
-    };
-
-    # P3R-272 -- Media Fetcher
-    homeConfigurations.P3R-272 = home-manager.lib.homeManagerConfiguration {
-      pkgs = x86_64-linx-pkgs;
-      modules = [./hosts/P3R-272/home.nix];
-    };
-
-    nixosConfigurations.P3R-272 = nixpkgs.lib.nixosSystem {
-      pkgs = x86_64-linx-pkgs;
-      system = "x86_64-linux";
-      modules = [./hosts/P3R-272/system.nix sops-nix.nixosModules.sops];
-    };
-
-    # P4X-347 -- Media Player Server
-    homeConfigurations.P4X-347 = home-manager.lib.homeManagerConfiguration {
-      pkgs = x86_64-linx-pkgs;
-      modules = [./hosts/P4X-347/home.nix];
-    };
-
-    nixosConfigurations.P4X-347 = nixpkgs.lib.nixosSystem {
-      pkgs = x86_64-linx-pkgs;
-      system = "x86_64-linux";
-      modules = [./hosts/P4X-347/system.nix sops-nix.nixosModules.sops];
-    };
+    # macOS
+    darwinConfigurations.p2s-4c3 = import ./hosts/P2S-4C3 inputs; # P2S-4C3 -- Work Laptop MacBook Pro M1
+    darwinConfigurations.p3x-984 = import ./hosts/P3X-984 inputs; # P3X-984 -- 16" MacBook Pro 2019
   };
 }

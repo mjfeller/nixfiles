@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  home-manager,
   ...
 }: {
   imports = [
@@ -18,6 +19,12 @@
     ../../system/x11
     ../../system/users
   ];
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.mjf = {
+    imports = [./home.nix];
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
