@@ -9,7 +9,7 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
 
     home-manager.url = "github:nix-community/home-manager/release-22.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs-darwin";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager-darwin.url = "github:nix-community/home-manager/release-22.11";
     home-manager-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
