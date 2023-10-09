@@ -9,7 +9,7 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.mjf = {config, pkgs, ...}: {
+  home-manager.users.mfeller = {config, pkgs, ...}: {
     imports = [
       ../../home/bin
       ../../home/emacs
@@ -38,7 +38,7 @@
   };
 
   # Setup primary user
-  users.users.mjf = {
+  users.users.mfeller = {
     name = "mfeller";
     home = "/Users/mfeller";
   };
