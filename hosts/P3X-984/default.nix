@@ -1,17 +1,18 @@
 {
-  nixpkgs,
+  nixpkgs-darwin,
+  darwin,
   home-manager,
   ...
 }: let
-  system = "aarch64-darwin";
-  pkgs = import nixpkgs {
+  system = "x86_64-darwin";
+  pkgs = import nixpkgs-darwin {
     inherit system;
 
-    pkgs = nixpkgs;
+    pkgs = nixpkgs-darwin;
     config.allowUnfree = true;
   };
 in
-  nixpkgs.lib.nixosSystem rec {
+  darwin.lib.darwinSystem rec {
     inherit system;
     inherit pkgs;
 

@@ -31,9 +31,7 @@ update() {
             sudo nixos-rebuild switch --flake "${nixfiles}"
             ;;
         Darwin*)
-            nix build "${nixfiles}#darwinConfigurations.${name}.system"
-            ${nixfiles}/result/sw/bin/darwin-rebuild switch --flake ${nixfiles}
-            home-manager switch --flake "${nixfiles}#${name}"
+            darwin-rebuild switch --flake "${nixfiles}#${name}"
             ;;
         *)
             echo "Could not detect OS"
