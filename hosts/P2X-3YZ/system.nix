@@ -1,10 +1,6 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
-  home-manager,
   ...
 }: {
   imports = [
@@ -23,13 +19,33 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.mjf = {
-    imports = [./home.nix];
-  };
+    imports = [
+      ../../home/bin
+      ../../home/dunst
+      ../../home/emacs
+      ../../home/git
+      ../../home/gpg
+      ../../home/lf
+      ../../home/mail
+      ../../home/sx
+      ../../home/media
+      ../../home/xdg
+      ../../home/zathura
+      ../../home/zsh
+    ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = ["ntfs"];
+    home.username = "mjf";
+    home.homeDirectory = "/home/mjf";
+    home.stateVersion = "22.11";
+
+    services.mpd.enable = true;
+    services.mpd.musicDirectory = "/var/media/music";
+
+    programs.home-manager.enable = true;
+    home.packages = with pkgs; [
+      brave
+    ];
+  };
 
   # Set your timezone
   time.timeZone = "America/Denver";
@@ -66,8 +82,19 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    file
+    fzf
+    git
+    graphviz
+    htop
+    lsof
+    monero-gui
     pinentry
     pinentry-qt
+    ripgrep
+    sxiv
+    unzip
+    zip
   ];
 
   fonts.fonts = [pkgs.comic-mono];

@@ -12,6 +12,10 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = ["ntfs"];
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "uas" "sd_mod"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = [];
