@@ -7,6 +7,36 @@
     ../../system/macos
   ];
 
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.mjf = {config, pkgs, ...}: {
+    imports = [
+      ../../home/bin
+      ../../home/emacs
+      ../../home/git/work.nix
+      ../../home/lf
+      ../../home/zsh
+    ];
+
+    # This value determines the Home Manager release that your
+    # configuration is compatible with. This helps avoid breakage
+    # when a new Home Manager release introduces backwards
+    # incompatible changes.
+    #
+    # You can update Home Manager without changing this value. See
+    # the Home Manager release notes for a list of state version
+    # changes in each release.
+    home.stateVersion = "22.11";
+
+    # Home Manager needs a bit of information about you and the
+    # paths it should manage.
+    home.username = "mfeller";
+    home.homeDirectory = "/Users/mfeller";
+
+    # Let Home Manager install and manage itself.
+    programs.home-manager.enable = true;
+  };
+
   # Setup primary user
   users.users.mjf = {
     name = "mfeller";
@@ -20,6 +50,7 @@
   nix.settings.auto-optimise-store = true;
   nix.gc.automatic = true;
   nix.gc.options = "--delete-older-than 30d";
+  nix.package = pkgs.nix;
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
