@@ -25,7 +25,7 @@ SHELL_SESSION_HISTORY=0
 
 update() {
     nixfiles="${HOME}/.config/nixfiles"
-    name="$(hostname -s)"
+    name="$(hostname)"
     case "$(uname -s)" in
         Linux*)
             sudo nixos-rebuild switch --flake "${nixfiles}"
