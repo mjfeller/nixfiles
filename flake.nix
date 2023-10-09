@@ -34,14 +34,14 @@
     formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".alejandra;
 
     nixosConfigurations = {
-      P2X-3YZ = import ./hosts/P2X-3YZ inputs; # P2X-3YZ -- Desktop
-      P3R-272 = import ./hosts/P3R-272 inputs; # P3R-272 -- Media Fetcher
-      P4X-347 = import ./hosts/P4X-347 inputs; # P4X-347 -- Media Player Server
+      P2X-3YZ = import ./hosts/P2X-3YZ inputs; # Desktop
+      P3R-272 = import ./hosts/P3R-272 inputs; # Media Fetcher
+      P4X-347 = import ./hosts/P4X-347 inputs; # Media Player Server
     };
 
     darwinConfigurations = {
-      p2s-4c3 = import ./hosts/P2S-4C3 inputs; # P2S-4C3 -- Work Laptop MacBook Pro M1
-      p3x-984 = import ./hosts/P3X-984 inputs; # P3X-984 -- 16" MacBook Pro 2019
+      p2s-4c3 = import ./hosts/P2S-4C3 inputs; # Work Laptop MacBook Pro M1
+      p3x-984 = import ./hosts/P3X-984 inputs; # 16" MacBook Pro 2019
     };
   };
 }
