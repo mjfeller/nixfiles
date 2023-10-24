@@ -35,6 +35,8 @@
   services.openssh.settings.PasswordAuthentication = false;
   services.openssh.settings.KbdInteractiveAuthentication = false;
 
+  programs.zsh.enable = true;
+
   # Open ports in the firewall.
   networking.firewall.enable = false;
 
