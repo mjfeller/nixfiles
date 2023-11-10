@@ -11,6 +11,7 @@
   home-manager.useUserPackages = true;
   home-manager.users.mfeller = {config, pkgs, ...}: {
     imports = [
+      ../../home/alacritty
       ../../home/bin
       ../../home/emacs
       ../../home/git/work.nix

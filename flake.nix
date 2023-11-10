@@ -42,7 +42,7 @@
     };
 
     darwinConfigurations = {
-      p2s-4c3 = import ./hosts/P2S-4C3 inputs; # Work Laptop MacBook Pro M1
+      P2S-4C3 = import ./hosts/P2S-4C3 inputs; # Work Laptop MacBook Pro M1
       P3X-984 = import ./hosts/P3X-984 inputs; # 16" MacBook Pro 2019
     };
   };
