@@ -24,6 +24,7 @@ export PATH=$GOPATH/bin:$PATH
 
 # Pash config
 export PASH_TIMEOUT=off
+export PASH_KEYID="AD1123AE40116CBA25464FA10B54905CC58C10EE"
 case "$(uname -s)" in
     Linux*)  export PASH_CLIP="xclip -i -selection clipboard" ;;
     Darwin*) export PASH_CLIP="pbcopy"   ;;
