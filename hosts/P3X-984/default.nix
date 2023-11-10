@@ -1,7 +1,7 @@
 {
   nixpkgs-darwin,
   darwin,
-  home-manager,
+  home-manager-darwin,
   ...
 }: let
   system = "x86_64-darwin";
@@ -18,6 +18,6 @@ in
 
     modules = [
       ./system.nix
-      home-manager.darwinModules.home-manager
+      home-manager-darwin.darwinModules.home-manager
     ];
   }
