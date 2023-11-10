@@ -20,6 +20,7 @@
   home-manager.useUserPackages = true;
   home-manager.users.mjf = {
     imports = [
+      ../../home/alacritty
       ../../home/bin
       ../../home/dunst
       ../../home/emacs

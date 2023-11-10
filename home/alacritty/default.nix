@@ -49,7 +49,7 @@
 
         # Window decorations
         # Setting this to false will result in window without borders and title bar.
-        decorations = "transparent";
+        decorations = "Full";
       };
 
       # When true, bold text is drawn using the bright variant of colors.
@@ -79,13 +79,13 @@
         };
 
         # Point size of the font
-        size = 10.0;
+        size = 9.0;
 
         # Offset is the extra space around each character. offset.y can be thought of
         # as modifying the linespacing, and offset.x as modifying the letter spacing.
         offset = {
           x = 0;
-          y = 5;
+          y = 2;
         };
 
         # Glyph offset determines the locations of the glyphs within their cells with
