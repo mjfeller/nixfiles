@@ -10,6 +10,7 @@
     ../../system/emacs
     ../../system/media
     ../../system/networking
+    ../../system/networking/tailscale.nix
     ../../system/nix
     ../../system/secrets
     ../../system/x11
@@ -98,7 +99,7 @@
     zip
   ];
 
-  fonts.fonts = [pkgs.comic-mono];
+  fonts.packages = [pkgs.comic-mono];
 
   programs.zsh.enable = true;
 
