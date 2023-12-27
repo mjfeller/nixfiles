@@ -47,7 +47,7 @@ BEMENU_OPTIONS=(
     --ignorecase
     --line-height 20
     --border 1
-    --fn 'Iosevka Comfy Wide Motion 12'
+    --fn "'Iosevka Comfy Wide Motion 12'"
     --fb '#000000'
     --cb '#000000'
     --nb '#000000'
