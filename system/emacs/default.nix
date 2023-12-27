@@ -4,7 +4,7 @@
   ...
 }: {
   services.emacs.enable = true;
-  services.emacs.package = with pkgs; ((emacsPackagesFor emacs-unstable).emacsWithPackages (epkgs: [
+  services.emacs.package = with pkgs; ((emacsPackagesFor emacs-pgtk).emacsWithPackages (epkgs: [
     epkgs.bind-key
     epkgs.company
     epkgs.company-c-headers
