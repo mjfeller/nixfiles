@@ -13,7 +13,6 @@
     ../../system/networking/tailscale.nix
     ../../system/nix
     ../../system/secrets
-    ../../system/x11
     ../../system/users
   ];
 
@@ -29,7 +28,6 @@
       ../../home/gpg
       ../../home/lf
       ../../home/mail
-      ../../home/sx
       ../../home/media
       ../../home/xdg
       ../../home/zathura
