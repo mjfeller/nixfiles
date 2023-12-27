@@ -59,27 +59,27 @@
       font = {
         # The normal (roman) font face to use.
         normal = {
-          family = "Comic Mono";
+          family = "Iosevka Comfy Wide Motion";
           # Style can be specified to pick a specific face.
           style = "Medium";
         };
 
         # The bold font face
         bold = {
-          family = "Comic Mono";
+          family = "Iosevka Comfy Wide Motion";
           # Style can be specified to pick a specific face.
           # style: Bold
         };
 
         # The italic font face
         italic = {
-          family = "Comic Mono";
+          family = "Iosevka Comfy Wide Motion";
           # Style can be specified to pick a specific face.
           # style: Italic
         };
 
         # Point size of the font
-        size = 9.0;
+        size = 10.0;
 
         # Offset is the extra space around each character. offset.y can be thought of
         # as modifying the linespacing, and offset.x as modifying the letter spacing.
