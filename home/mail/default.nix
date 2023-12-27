@@ -93,7 +93,9 @@ in {
     maildir.synchronizeFlags = true;
   };
 
-  programs.offlineimap.enable = true;
+  home.packages = [
+    pkgs.offlineimap
+  ];
 
   xdg.configFile."offlineimap/get_settings.py".text = ''
     from subprocess import check_output
