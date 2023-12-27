@@ -97,11 +97,30 @@
     sxiv
     unzip
     zip
+    bemenu
+    jq
+    ledger
   ];
 
-  fonts.packages = [pkgs.comic-mono];
+  fonts.packages = with pkgs; [
+    comic-mono
+    iosevka
+    iosevka-comfy.comfy
+    iosevka-comfy.comfy-duo
+    iosevka-comfy.comfy-wide
+    iosevka-comfy.comfy-fixed
+    iosevka-comfy.comfy-motion
+    iosevka-comfy.comfy-wide-duo
+    iosevka-comfy.comfy-wide-fixed
+    iosevka-comfy.comfy-motion-duo
+    iosevka-comfy.comfy-motion-fixed
+    iosevka-comfy.comfy-wide-motion
+    iosevka-comfy.comfy-wide-motion-duo
+    iosevka-comfy.comfy-wide-motion-fixed
+  ];
 
   programs.zsh.enable = true;
+  programs.river.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

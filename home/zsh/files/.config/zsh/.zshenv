@@ -41,3 +41,20 @@ export LC_ALL=C
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+declare -a BEMENU_OPTIONS
+BEMENU_OPTIONS=(
+    --ignorecase
+    --line-height 20
+    --border 1
+    --fn 'Iosevka Comfy Wide Motion 12'
+    --fb '#000000'
+    --cb '#000000'
+    --nb '#000000'
+    --hb '#000000'
+    --ab '#000000'
+    --tf '#44bc44'
+    --hf '#44bc44'
+    --bdr '#FFFFFF'
+)
+export BEMENU_OPTS="${BEMENU_OPTIONS[@]}"

@@ -2,6 +2,12 @@
 #
 # Select a password to copy
 
-DMENU=$(test -z "$WAYLAND_DISPLAY" && echo "dmenu" || echo "dmenu-wl")
+DMENU=$(test -z "$WAYLAND_DISPLAY" && echo "dmenu" || echo "bemenu -l 10")
 
-pash copy "$(pash list | sort | $DMENU)"
+PASSWD=$(pash list | sort | $DMENU)
+if [ $? -eq 0 ] ; then
+    pash copy $PASSWD
+    notify-send "Password Copied" "$PASSWD"
+else
+    notify-send -u critical "Quit"
+fi

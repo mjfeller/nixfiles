@@ -50,16 +50,16 @@ final: prev: {
     };
   });
 
-  # # The brave build from the repos seems to only support
-  # # x11. This quick hack switches it over to run on wayland.
-  # brave = prev.brave.overrideAttrs (old: {
-  #   installPhase =
-  #     old.installPhase
-  #     + ''
-  #       rm $out/bin/brave
+  # The brave build from the repos seems to only support
+  # x11. This quick hack switches it over to run on wayland.
+  brave = prev.brave.overrideAttrs (old: {
+    installPhase =
+      old.installPhase
+      + ''
+        rm $out/bin/brave
 
-  #       makeWrapper $BINARYWRAPPER $out/bin/brave \
-  #         --add-flags "--ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer"
-  #     '';
-  # });
+        makeWrapper $BINARYWRAPPER $out/bin/brave \
+          --add-flags "--ozone-platform=wayland --enable-features=UseOzonePlatform,WebRTCPipeWireCapturer"
+      '';
+  });
 }
