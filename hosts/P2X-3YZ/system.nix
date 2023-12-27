@@ -47,12 +47,18 @@
     home.packages = with pkgs; [
       brave
     ];
+
+    programs.man.enable = true;
+    programs.man.generateCaches = true;
   };
 
   # Set your timezone
   time.timeZone = "America/Denver";
 
   # Auto generate mandb caches so we can use apropos and man -k
+  documentation.dev.enable = true;
+  documentation.man.enable = true;
+  documentation.man.man-db.enable = true;
   documentation.man.generateCaches = true;
 
   security.polkit.enable = true;
