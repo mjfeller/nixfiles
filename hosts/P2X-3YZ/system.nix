@@ -106,6 +106,8 @@
     ledger
   ];
 
+  programs.steam.enable = true;
+
   fonts.packages = with pkgs; [
     comic-mono
     iosevka
