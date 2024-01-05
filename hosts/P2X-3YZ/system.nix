@@ -105,6 +105,7 @@
     jq
     ledger
     xdg-utils
+    wl-clipboard
   ];
 
   programs.steam.enable = true;
