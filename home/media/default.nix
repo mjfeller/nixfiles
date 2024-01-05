@@ -11,12 +11,14 @@
     ".config/ncmpcpp".recursive = true;
   };
 
+  home.packages = with pkgs; [
+    ffmpeg
+  ];
+
   # mpv is a free (as in freedom) media player for the command line. It
   # supports a wide variety of media file formats, audio and video
   # codecs, and subtitle types.
-  programs.mpv = {
-    enable = true;
-  };
+  programs.mpv.enable = true;
 
   # Music Player Daemon (MPD) is a flexible, powerful, server-side
   # application for playing music. Through plugins and libraries it can
