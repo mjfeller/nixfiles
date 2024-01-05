@@ -12,6 +12,10 @@
   nix.gc.dates = "weekly";
   nix.gc.options = "--delete-older-than 30d";
   nix.settings.trusted-users = ["root" "mjf"];
+  nix.settings.substituters = [
+    "https://nix-community.cachix.org"
+    "https://cache.nixos.org/"
+  ];
 
   environment.systemPackages = with pkgs; [
     comma
