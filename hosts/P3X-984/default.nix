@@ -19,7 +19,7 @@ in
     modules = [
       ./system.nix
       home-manager-darwin.darwinModules.home-manager
-      { nix.nixPath = [ "nixpkgs=${nixpkgs-darwin}" ]; }
-      { nix.registry.nixpkgs.flake = nixpkgs-darwin; }
+      {nix.nixPath = ["nixpkgs=${nixpkgs-darwin}"];}
+      {nix.registry.nixpkgs.flake = nixpkgs-darwin;}
     ];
   }

@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  environment.systemPackages = [ pkgs.tailscale ];
+  environment.systemPackages = [pkgs.tailscale];
 
   services.tailscale.enable = true;
 }

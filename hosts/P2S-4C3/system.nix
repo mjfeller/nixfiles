@@ -10,7 +10,11 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.mfeller = {config, pkgs, ...}: {
+  home-manager.users.mfeller = {
+    config,
+    pkgs,
+    ...
+  }: {
     imports = [
       ../../home/alacritty
       ../../home/bin

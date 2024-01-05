@@ -9,7 +9,11 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.mjf = {config, pkgs, ...}: {
+  home-manager.users.mjf = {
+    config,
+    pkgs,
+    ...
+  }: {
     imports = [
       ../../home/alacritty
       ../../home/bin
