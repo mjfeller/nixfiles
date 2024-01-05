@@ -39,6 +39,10 @@
   # ----------------------------------------------------------------------
   #  Site
 
+  environment.systemPackages = with pkgs; [
+    certigo
+  ];
+
   services.nginx.enable = true;
   services.nginx.recommendedProxySettings = true;
 
