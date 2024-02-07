@@ -70,13 +70,13 @@
     git
     go
     home-manager
-    home-manager
     htop
     inetutils
     ispell
     jq
     lf
     mediainfo
+    nerdfonts
     ripgrep
     rust-analyzer
     rustc
