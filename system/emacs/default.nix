@@ -5,29 +5,25 @@
 }: {
   environment.systemPackages = with pkgs; [
     ((emacsPackagesFor emacs-pgtk).emacsWithPackages (epkgs: [
-      epkgs.bind-key
       epkgs.company
-      epkgs.company-c-headers
       epkgs.comment-dwim-2
       epkgs.consult
       epkgs.csv-mode
       epkgs.direnv
       epkgs.elfeed
+      epkgs.ef-themes
       epkgs.embark
       epkgs.embark-consult
       epkgs.evil
       epkgs.evil-goggles
       epkgs.evil-surround
-      epkgs.ggtags
       epkgs.git-timemachine
       epkgs.go-mode
       epkgs.helpful
-      epkgs.highlight-indentation
       epkgs.ledger-mode
       epkgs.logos
       epkgs.macrostep
       epkgs.magit
-      epkgs.minions
       epkgs.modus-themes
       epkgs.multi-vterm
       epkgs.multiple-cursors
@@ -36,16 +32,12 @@
       epkgs.olivetti
       epkgs.orderless
       epkgs.org-bullets
-      epkgs.org-fancy-priorities
       epkgs.paren-face
       epkgs.restclient
       epkgs.rg
-      epkgs.rust-mode
       epkgs.treesit-grammars.with-all-grammars
       epkgs.vertico
       epkgs.vterm
-      epkgs.yaml-mode
-      epkgs.yasnippet
     ]))
   ];
 }
