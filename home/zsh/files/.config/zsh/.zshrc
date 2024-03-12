@@ -1,11 +1,5 @@
 set -o emacs
 
-if [ -d $XDG_CODE_DIR/config_files ]; then
-    # Square specific config files
-    source $XDG_CODE_DIR/config_files/square/zshrc
-    source $XDG_CODE_DIR/config_files/square/aliases
-fi
-
 # my config files
 source $ZDOTDIR/aliasrc
 source $ZDOTDIR/fzf.zsh
@@ -41,5 +35,5 @@ update() {
 }
 
 if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
-    . "$(find ~/.cache/elpa -maxdepth 1 -name 'vterm-*')/etc/emacs-vterm-zsh.sh"
+    . "$(find ~/.cache/emacs/elpa -maxdepth 1 -name 'vterm-*')/etc/emacs-vterm-zsh.sh"
 fi
