@@ -12,7 +12,7 @@ export PATH=$PATH:/opt/homebrew/sbin
 export PATH=$PATH:$HOME/.local/bin
 
 export EDITOR=vim
-export PAGER=less
+export PAGER="less -RF"
 
 export MANWIDTH=80
 export LESSHISTFILE=-
@@ -36,7 +36,8 @@ esac
 # Notmuch config
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/default/config
 
-export LC_ALL=C
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 export NVM_DIR=$XDG_CONFIG_HOME/nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
