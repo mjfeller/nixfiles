@@ -2,6 +2,7 @@
   nixpkgs-darwin,
   darwin,
   home-manager-darwin,
+  emacs-overlay,
   ...
 }: let
   system = "aarch64-darwin";
@@ -10,6 +11,9 @@
 
     pkgs = nixpkgs-darwin;
     config.allowUnfree = true;
+    overlays = [
+      (import emacs-overlay)
+    ];
   };
 in
   darwin.lib.darwinSystem rec {

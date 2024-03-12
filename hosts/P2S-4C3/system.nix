@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ../../system/emacs
     ../../system/macos
   ];
 
