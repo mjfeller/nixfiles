@@ -59,7 +59,6 @@
 
   # List of installed packages specific to this host.
   environment.systemPackages = with pkgs; [
-    bazel_6
     cargo
     cmake
     curl
@@ -75,6 +74,7 @@
     inetutils
     ispell
     jq
+    jujutsu
     lf
     mediainfo
     ripgrep
@@ -84,6 +84,8 @@
     shellcheck
     tree
     watch
+    zig
+    zls
   ];
 
   fonts.fonts = with pkgs; [
