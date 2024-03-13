@@ -17,6 +17,7 @@
       epkgs.evil
       epkgs.evil-goggles
       epkgs.evil-surround
+      epkgs.exec-path-from-shell
       epkgs.git-timemachine
       epkgs.go-mode
       epkgs.helpful
@@ -29,16 +30,20 @@
       epkgs.multiple-cursors
       epkgs.nix-ts-mode
       epkgs.notmuch
+      epkgs.ns-auto-titlebar
       epkgs.olivetti
+      epkgs.osm
       epkgs.orderless
       epkgs.org-bullets
       epkgs.paren-face
+      epkgs.reformatter
       epkgs.restclient
       epkgs.rg
       epkgs.spacious-padding
       epkgs.treesit-grammars.with-all-grammars
       epkgs.vertico
       epkgs.vterm
+      epkgs.zig-mode
     ]))
   ];
 }
