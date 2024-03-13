@@ -35,6 +35,7 @@
       epkgs.paren-face
       epkgs.restclient
       epkgs.rg
+      epkgs.spacious-padding
       epkgs.treesit-grammars.with-all-grammars
       epkgs.vertico
       epkgs.vterm
