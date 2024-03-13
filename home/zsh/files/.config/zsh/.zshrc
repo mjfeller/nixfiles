@@ -33,7 +33,3 @@ update() {
             ;;
     esac
 }
-
-if [[ "$INSIDE_EMACS" = 'vterm' ]]; then
-    . "$(find ~/.cache/emacs/elpa -maxdepth 1 -name 'vterm-*')/etc/emacs-vterm-zsh.sh"
-fi
