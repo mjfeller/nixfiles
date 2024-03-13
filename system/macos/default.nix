@@ -32,7 +32,4 @@
   system.stateVersion = 4;
 
   homebrew.enable = true;
-  homebrew.brews = [
-    "emacs-plus@30"
-  ];
 }
