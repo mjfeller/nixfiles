@@ -19,7 +19,6 @@
       epkgs.evil-surround
       epkgs.exec-path-from-shell
       epkgs.git-timemachine
-      epkgs.go-mode
       epkgs.helpful
       epkgs.ledger-mode
       epkgs.logos
