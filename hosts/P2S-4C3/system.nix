@@ -83,6 +83,7 @@
     lf
     mediainfo
     ripgrep
+    rsync
     rust-analyzer
     rustc
     rustfmt
