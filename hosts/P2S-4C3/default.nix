@@ -2,7 +2,7 @@
   nixpkgs-darwin,
   darwin,
   home-manager-darwin,
-  emacs-overlay,
+  emacs-overlay-darwin,
   ...
 }: let
   system = "aarch64-darwin";
@@ -12,7 +12,7 @@
     pkgs = nixpkgs-darwin;
     config.allowUnfree = true;
     overlays = [
-      (import emacs-overlay)
+      (import emacs-overlay-darwin)
     ];
   };
 in
