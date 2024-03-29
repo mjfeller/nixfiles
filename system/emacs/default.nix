@@ -9,6 +9,7 @@
       epkgs.comment-dwim-2
       epkgs.consult
       epkgs.csv-mode
+      epkgs.denote
       epkgs.direnv
       epkgs.elfeed
       epkgs.ef-themes
