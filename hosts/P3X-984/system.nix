@@ -91,4 +91,6 @@
   programs.gnupg.agent.enableSSHSupport = true;
 
   programs.man.enable = true;
+
+  fonts.fontDir.enable = true;
 }
