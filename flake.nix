@@ -19,10 +19,7 @@
     sops-nix.inputs.nixpkgs-stable.follows = "nixpkgs";
   };
 
-  outputs = {
-    nixpkgs,
-    ...
-  } @ inputs: {
+  outputs = {nixpkgs, ...} @ inputs: {
     formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".alejandra;
 
     nixosConfigurations = {
