@@ -11,7 +11,7 @@
 
     pkgs = nixpkgs;
     config.allowUnfree = true;
-    overlays = [ emacs-overlay.overlay ];
+    overlays = [emacs-overlay.overlay];
   };
 in
   darwin.lib.darwinSystem rec {

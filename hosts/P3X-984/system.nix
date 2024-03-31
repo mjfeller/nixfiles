@@ -5,6 +5,7 @@
 }: {
   imports = [
     ../../system/fonts
+    ../../system/emacs
     ../../system/macos
   ];
 

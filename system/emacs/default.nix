@@ -2,9 +2,14 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  emacs =
+    if pkgs.stdenv.isLinux
+    then pkgs.emacs-pgtk
+    else pkgs.emacs-git;
+in {
   environment.systemPackages = with pkgs; [
-    ((emacsPackagesFor emacs-pgtk).emacsWithPackages (epkgs: [
+    ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
       epkgs.company
       epkgs.comment-dwim-2
       epkgs.consult
