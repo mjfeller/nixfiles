@@ -108,6 +108,8 @@
     wl-clipboard
   ];
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   programs.steam.enable = true;
 
   fonts.packages = with pkgs; [

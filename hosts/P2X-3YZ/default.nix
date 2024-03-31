@@ -13,7 +13,6 @@
     config.allowUnfree = true;
     overlays = [
       (import emacs-overlay)
-      (import ../../overlays)
     ];
   };
 in

@@ -9,8 +9,6 @@ There are several subdirectories:
 'home'        holds configuration used by home-mananger.
 'hosts'       holds top level entrypoints for host configuration for nixos,
               nix-darwin, and home-manager.
-'overlays'    holds nixpkgs overlays for customized packages. Primarily for
-              personalized suckless utilities.
 system'       holds system configuration for nixos and nix-darwin.
 
 I am also a heavy user of emacs and manage my emacs configuration through a
