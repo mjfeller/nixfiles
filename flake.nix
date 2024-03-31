@@ -14,10 +14,6 @@
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
     emacs-overlay.inputs.nixpkgs-stable.follows = "nixpkgs";
 
-    emacs-overlay-darwin.url = "github:nix-community/emacs-overlay";
-    emacs-overlay-darwin.inputs.nixpkgs.follows = "nixpkgs-darwin";
-    emacs-overlay-darwin.inputs.nixpkgs-stable.follows = "nixpkgs-darwin";
-
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.inputs.nixpkgs-stable.follows = "nixpkgs";
