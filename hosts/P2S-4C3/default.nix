@@ -12,7 +12,7 @@
     pkgs = nixpkgs;
     config.allowUnfree = true;
     overlays = [
-      (import emacs-overlay-darwin)
+      (import emacs-overlay)
     ];
   };
 in
