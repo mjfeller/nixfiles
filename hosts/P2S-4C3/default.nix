@@ -1,15 +1,15 @@
 {
-  nixpkgs-darwin,
+  nixpkgs,
   darwin,
-  home-manager-darwin,
-  emacs-overlay-darwin,
+  home-manager,
+  emacs-overlay,
   ...
 }: let
   system = "aarch64-darwin";
-  pkgs = import nixpkgs-darwin {
+  pkgs = import nixpkgs {
     inherit system;
 
-    pkgs = nixpkgs-darwin;
+    pkgs = nixpkgs;
     config.allowUnfree = true;
     overlays = [
       (import emacs-overlay-darwin)
@@ -22,8 +22,8 @@ in
 
     modules = [
       ./system.nix
-      home-manager-darwin.darwinModules.home-manager
-      {nix.nixPath = ["nixpkgs=${nixpkgs-darwin}"];}
-      {nix.registry.nixpkgs.flake = nixpkgs-darwin;}
+      home-manager.darwinModules.home-manager
+      {nix.nixPath = ["nixpkgs=${nixpkgs}"];}
+      {nix.registry.nixpkgs.flake = nixpkgs;}
     ];
   }

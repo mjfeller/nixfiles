@@ -1,14 +1,14 @@
 {
-  nixpkgs-darwin,
+  nixpkgs,
   darwin,
-  home-manager-darwin,
+  home-manager,
   ...
 }: let
   system = "x86_64-darwin";
-  pkgs = import nixpkgs-darwin {
+  pkgs = import nixpkgs {
     inherit system;
 
-    pkgs = nixpkgs-darwin;
+    pkgs = nixpkgs;
     config.allowUnfree = true;
   };
 in
@@ -18,8 +18,8 @@ in
 
     modules = [
       ./system.nix
-      home-manager-darwin.darwinModules.home-manager
-      {nix.nixPath = ["nixpkgs=${nixpkgs-darwin}"];}
-      {nix.registry.nixpkgs.flake = nixpkgs-darwin;}
+      home-manager.darwinModules.home-manager
+      {nix.nixPath = ["nixpkgs=${nixpkgs}"];}
+      {nix.registry.nixpkgs.flake = nixpkgs;}
     ];
   }
