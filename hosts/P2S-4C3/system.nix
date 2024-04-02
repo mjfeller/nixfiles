@@ -103,5 +103,5 @@
 
   programs.man.enable = true;
 
-  fonts.fontDir = true;
+  fonts.fontDir.enable = true;
 }
