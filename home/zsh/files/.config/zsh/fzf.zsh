@@ -30,5 +30,7 @@ fkill() {
   fi
 }
 
-zle -N __fzf_history fh
-bindkey '^R' __fzf_history
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+  source "$(fzf-share)/completion.zsh"
+fi
