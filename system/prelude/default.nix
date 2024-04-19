@@ -1,4 +1,11 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.package = pkgs.nix;
+
   environment.systemPackages = with pkgs; [
     curl
     dig
@@ -16,6 +23,7 @@
     rsync
     tree
     unzip
+    vim
     watch
     wget
     zip
