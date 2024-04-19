@@ -1,9 +1,10 @@
 {
   config,
   pkgs,
+  lib,
   ...
-}: {
-  fonts.packages = with pkgs; [
+}: let
+  myFonts = with pkgs; [
     nerdfonts
     iosevka
     iosevka-comfy.comfy
@@ -19,4 +20,10 @@
     iosevka-comfy.comfy-wide-motion-duo
     iosevka-comfy.comfy-wide-motion-fixed
   ];
+in {
+  fonts = (
+    {fontDir.enabled = true;}
+    // lib.mkIf pkgs.stdenv.isLinux {packages = myFonts;}
+    // lib.mkIf pkgs.stdenv.isDarwin {fonts = myFonts;}
+  );
 }
