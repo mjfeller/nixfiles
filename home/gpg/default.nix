@@ -5,7 +5,7 @@
 }: {
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = "qt";
+    pinentryPackage = pkgs.pinentry-qt;
     enableSshSupport = true;
     defaultCacheTtl = 60;
     maxCacheTtl = 120;
