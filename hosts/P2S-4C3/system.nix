@@ -67,6 +67,7 @@
   environment.systemPackages = with pkgs; [
     cargo
     cmake
+    cue
     direnv
     go
     ispell

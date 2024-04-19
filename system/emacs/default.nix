@@ -14,6 +14,7 @@ in {
       epkgs.comment-dwim-2
       epkgs.consult
       epkgs.csv-mode
+      epkgs.cue-mode
       epkgs.denote
       epkgs.direnv
       epkgs.elfeed
