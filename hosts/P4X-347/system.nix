@@ -8,6 +8,7 @@
 
     ../../system/media/jellyfin.nix
     ../../system/media/mounts.nix
+    ../../system/prelude
     ../../system/users
   ];
 
@@ -38,13 +39,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
-    dig
-    htop
-    inetutils
-    lsof
-    netcat
-    nmap
-    wget
   ];
 
   # Enable the OpenSSH daemon.

@@ -7,6 +7,7 @@
     ../../system/fonts
     ../../system/emacs
     ../../system/macos
+    ../../system/prelude
   ];
 
   home-manager.useGlobalPkgs = true;
@@ -60,25 +61,9 @@
 
   # List of installed packages specific to this host.
   environment.systemPackages = with pkgs; [
-    cmake
-    comic-mono
-    curl
-    dig
     direnv
-    fd
-    file
-    fzf
-    git
-    home-manager
-    htop
-    inetutils
     ispell
-    jq
-    lf
     mediainfo
-    ripgrep
-    tree
-    watch
   ];
 
   # Auto upgrade nix package and the daemon service.

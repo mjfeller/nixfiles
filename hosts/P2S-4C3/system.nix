@@ -7,6 +7,7 @@
     ../../system/emacs
     ../../system/fonts
     ../../system/macos
+    ../../system/prelude
   ];
 
   home-manager.useGlobalPkgs = true;
@@ -66,30 +67,15 @@
   environment.systemPackages = with pkgs; [
     cargo
     cmake
-    curl
-    dig
     direnv
-    fd
-    file
-    fzf
-    git
     go
-    home-manager
-    htop
-    inetutils
     ispell
-    jq
     jujutsu
-    lf
     mediainfo
-    ripgrep
-    rsync
     rust-analyzer
     rustc
     rustfmt
     shellcheck
-    tree
-    watch
     zig
     zls
   ];
