@@ -8,12 +8,15 @@
 
     ../../system/audio
     ../../system/emacs
+    ../../system/fonts
     ../../system/media
     ../../system/networking
     ../../system/networking/tailscale.nix
     ../../system/nix
+    ../../system/prelude
     ../../system/secrets
     ../../system/users
+    ../../system/wayland
   ];
 
   home-manager.useGlobalPkgs = true;
@@ -80,57 +83,21 @@
   services.openssh.settings.PasswordAuthentication = false;
   services.openssh.settings.KbdInteractiveAuthentication = false;
 
-  # services.pcscd.enable = true;
-
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   #  Packages
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    file
-    fzf
-    git
     graphviz
-    htop
-    lsof
+    ledger
     monero-gui
     pinentry
     pinentry-qt
-    ripgrep
     sxiv
-    unzip
-    zip
-    bemenu
-    jq
-    ledger
-    xdg-utils
-    wl-clipboard
-  ];
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  programs.steam.enable = true;
-
-  fonts.packages = with pkgs; [
-    comic-mono
-    iosevka
-    iosevka-comfy.comfy
-    iosevka-comfy.comfy-duo
-    iosevka-comfy.comfy-wide
-    iosevka-comfy.comfy-fixed
-    iosevka-comfy.comfy-motion
-    iosevka-comfy.comfy-wide-duo
-    iosevka-comfy.comfy-wide-fixed
-    iosevka-comfy.comfy-motion-duo
-    iosevka-comfy.comfy-motion-fixed
-    iosevka-comfy.comfy-wide-motion
-    iosevka-comfy.comfy-wide-motion-duo
-    iosevka-comfy.comfy-wide-motion-fixed
   ];
 
   programs.zsh.enable = true;
-  programs.river.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -141,11 +108,6 @@
     pinentryPackage = pkgs.pinentry-qt;
   };
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -153,7 +115,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11";
-
-  xdg.portal.enable = true;
-  xdg.portal.wlr.enable = true;
 }
