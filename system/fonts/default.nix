@@ -20,10 +20,10 @@
     iosevka-comfy.comfy-wide-motion-duo
     iosevka-comfy.comfy-wide-motion-fixed
   ];
+  attrset =
+    if pkgs.stdenv.isLinux
+    then { packages = myFonts; }
+    else { fonts = myFonts; };
 in {
-  fonts = (
-    {fontDir.enabled = true;}
-    // lib.mkIf pkgs.stdenv.isLinux {packages = myFonts;}
-    // lib.mkIf pkgs.stdenv.isDarwin {fonts = myFonts;}
-  );
+  fonts = { fontDir.enable = true; } // attrset;
 }
