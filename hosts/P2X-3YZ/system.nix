@@ -47,6 +47,7 @@
     programs.home-manager.enable = true;
     home.packages = with pkgs; [
       brave
+      spotify
     ];
 
     programs.man.enable = true;
