@@ -20,7 +20,6 @@
     imports = [
       ../../home/alacritty
       ../../home/bin
-      ../../home/emacs
       ../../home/git/work.nix
       ../../home/lf
       ../../home/zsh

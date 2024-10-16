@@ -26,7 +26,6 @@
       ../../home/alacritty
       ../../home/bin
       ../../home/dunst
-      ../../home/emacs
       ../../home/git
       ../../home/gpg
       ../../home/lf
