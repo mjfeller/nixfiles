@@ -12,13 +12,8 @@
   # provided by most desktop environments. It’s very customizable, isn’t
   # dependent on any toolkits, and therefore fits into those window
   # manager centric setups we all love to customize to perfection.
-  #
-  # TODO: Since I'm using sx the X11 DISPLAY should be :1 not the
-  # default :0. No idea how to overlay the systemd service to fix it
-  # though.
   services.dunst = {
     enable = true;
-    # waylandDisplay = "wayland-0";
     settings = {
       global = {
         font = "Comic Mono 10";
@@ -156,18 +151,21 @@
         frame_width = 1;
         frame_color = "#000000";
       };
+
       urgency_low = {
         frame_color = "#a8a8a8";
         foreground = "#ffffff";
         background = "#000000";
         timeout = 4;
       };
+
       ugrency_normal = {
         frame_color = "#a8a8a8";
         foreground = "#ffffff";
         background = "#000000";
         timeout = 6;
       };
+
       urgency_critical = {
         frame_color = "#cc241d";
         foreground = "#cc241d";
