@@ -128,15 +128,15 @@ in {
     restoreatime = no
   '';
 
-  systemd.user.timers."mail-sync" = {
-    Timer.OnBootSec = "5m";
-    Timer.OnUnitActiveSec = "1h";
-    Install.WantedBy = ["timers.target"];
-  };
+  # systemd.user.timers."mail-sync" = {
+  #   Timer.OnBootSec = "5m";
+  #   Timer.OnUnitActiveSec = "1h";
+  #   Install.WantedBy = ["timers.target"];
+  # };
 
-  systemd.user.services."mail-sync" = {
-    Unit.Description = "Sync mail and notify the user";
-    Service.Type = "oneshot";
-    Service.ExecStart = "${mkStartScript "mail-sync"}";
-  };
+  # systemd.user.services."mail-sync" = {
+  #   Unit.Description = "Sync mail and notify the user";
+  #   Service.Type = "oneshot";
+  #   Service.ExecStart = "${mkStartScript "mail-sync"}";
+  # };
 }
