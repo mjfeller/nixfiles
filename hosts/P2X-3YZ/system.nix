@@ -47,6 +47,7 @@
     home.packages = with pkgs; [
       brave
       spotify
+      whatsapp-for-linux
     ];
 
     programs.man.enable = true;
