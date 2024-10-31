@@ -20,7 +20,8 @@ kcc() {
 kc() {
     # Automatically apply the --context=$1 to each kubectl command. When
     # no $1 is passed the env var is unset.
-    [ -z "$1" ] && unset KUBECTX || export KUBECTX="$1"
+    ctx=$([ -z "$1" ] && kubectl config get-contexts -o name | fzf || printf "$1")
+    [ -z "$ctx" ] && unset KUBECTX || export KUBECTX="$ctx"
 }
 
 kn() {

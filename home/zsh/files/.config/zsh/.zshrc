@@ -25,7 +25,7 @@ update() {
             sudo nixos-rebuild switch --flake "${nixfiles}"
             ;;
         Darwin*)
-            darwin-rebuild switch --flake "${nixfiles}#${name}"
+            darwin-rebuild switch --flake "${nixfiles}#${name%%.*}"
             ;;
         *)
             echo "Could not detect OS"
