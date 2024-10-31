@@ -24,13 +24,16 @@ in {
       epkgs.evil
       epkgs.evil-goggles
       epkgs.evil-surround
+      epkgs.evil-textobj-tree-sitter
       epkgs.exec-path-from-shell
       epkgs.git-timemachine
+      epkgs.hcl-mode
       epkgs.helpful
       epkgs.ledger-mode
       epkgs.logos
       epkgs.macrostep
       epkgs.magit
+      epkgs.markdown-mode
       epkgs.modus-themes
       epkgs.multi-vterm
       epkgs.multiple-cursors
@@ -46,6 +49,9 @@ in {
       epkgs.restclient
       epkgs.rg
       epkgs.spacious-padding
+      epkgs.terraform-mode
+      epkgs.tsc
+      epkgs.tree-sitter
       epkgs.treesit-grammars.with-all-grammars
       epkgs.vertico
       epkgs.vterm
