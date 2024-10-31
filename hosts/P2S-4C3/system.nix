@@ -64,8 +64,10 @@
   environment.systemPackages = with pkgs; [
     cargo
     cmake
+    crudini
     cue
     direnv
+    eksctl
     go
     ispell
     jujutsu
@@ -76,6 +78,9 @@
     shellcheck
     zig
     zls
+
+    upbound
+    mockgen
   ];
 
   # ZSH Basic Configuration
