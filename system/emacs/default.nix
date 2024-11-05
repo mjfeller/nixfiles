@@ -13,6 +13,7 @@ in {
       epkgs.company
       epkgs.comment-dwim-2
       epkgs.consult
+      epkgs.corfu
       epkgs.csv-mode
       epkgs.cue-mode
       epkgs.denote
