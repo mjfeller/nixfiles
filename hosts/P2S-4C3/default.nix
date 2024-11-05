@@ -3,6 +3,7 @@
   darwin,
   home-manager,
   emacs-overlay,
+  mac-app-util,
   ...
 }: let
   system = "aarch64-darwin";
@@ -22,6 +23,7 @@ in
 
     modules = [
       ./system.nix
+      mac-app-util.darwinModules.default
       home-manager.darwinModules.home-manager
       {nix.nixPath = ["nixpkgs=${nixpkgs}"];}
       {nix.registry.nixpkgs.flake = nixpkgs;}
