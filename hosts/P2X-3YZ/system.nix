@@ -11,7 +11,6 @@
     ../../system/fonts
     ../../system/media
     ../../system/networking
-    ../../system/networking/tailscale.nix
     ../../system/nix
     ../../system/prelude
     ../../system/secrets
