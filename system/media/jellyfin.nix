@@ -12,29 +12,27 @@
   # feeds for new episodes of your favorite shows and will grab, sort and rename
   # them.
   services.sonarr.enable = true;
-  services.sonarr.user = "margartv";
   services.sonarr.group = "margartv";
 
   # Radarr is a movie collection manager for Usenet and BitTorrent users. It can
   # monitor multiple RSS feeds for new movies and will interface with clients
   # and indexers to grab, sort, and rename them.
   services.radarr.enable = true;
-  services.radarr.user = "margartv";
   services.radarr.group = "margartv";
 
-  # Lidarr is a music collection manager for Usenet and BitTorrent
-  # users. It can monitor multiple RSS feeds for new albums from your
-  # favorite artists and will interface with clients and indexers to
-  # grab, sort, and rename them.
-  services.lidarr.enable = true;
-  services.lidarr.user = "margartv";
-  services.lidarr.group = "margartv";
+  # # Lidarr is a music collection manager for Usenet and BitTorrent
+  # # users. It can monitor multiple RSS feeds for new albums from your
+  # # favorite artists and will interface with clients and indexers to
+  # # grab, sort, and rename them.
+  # services.lidarr.enable = true;
+  # services.lidarr.user = "margartv";
+  # services.lidarr.group = "margartv";
 
-  services.jackett.enable = true;
-  services.jackett.user = "margartv";
-  services.jackett.group = "margartv";
+  # services.jackett.enable = true;
+  # services.jackett.user = "margartv";
+  # services.jackett.group = "margartv";
 
-  services.prowlarr.enable = true;
+  # services.prowlarr.enable = true;
 
   # ----------------------------------------------------------------------
   #  Site
@@ -63,15 +61,15 @@
       locations."/sonarr" = {
         proxyPass = "http://localhost:8989/sonarr";
       };
-      locations."/lidarr" = {
-        proxyPass = "http://localhost:8686/lidarr";
-      };
-      locations."/prowlarr" = {
-        proxyPass = "http://localhost:9696/prowlarr";
-      };
-      locations."/jackett" = {
-        proxyPass = "http://localhost:9117/jackett";
-      };
+      # locations."/lidarr" = {
+      #   proxyPass = "http://localhost:8686/lidarr";
+      # };
+      # locations."/prowlarr" = {
+      #   proxyPass = "http://localhost:9696/prowlarr";
+      # };
+      # locations."/jackett" = {
+      #   proxyPass = "http://localhost:9117/jackett";
+      # };
       locations."/nzbget" = {
         proxyPass = "http://192.168.3.201:6789/nzbget";
       };

@@ -12,7 +12,7 @@
       where = "/var/media";
       what = "//nas.margar.org/mnt";
       mountConfig = {
-        Options = "credentials=/run/secrets/smb/credentials,x-systemd.automount,noauto,uid=1001,gid=1002";
+        Options = "credentials=/run/secrets/smb/credentials,x-systemd.automount,noauto,uid=1001,gid=1002,file_mode=0660,dir_mode=0770";
       };
     }
   ];
