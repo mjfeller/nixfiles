@@ -3,7 +3,8 @@
   ...
 }: {
   fonts.packages = with pkgs; [
-    nerdfonts
+    nerd-fonts._0xproto
+    nerd-fonts.droid-sans-mono
     iosevka
     iosevka-comfy.comfy
     iosevka-comfy.comfy-duo
