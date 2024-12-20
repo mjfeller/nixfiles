@@ -34,6 +34,7 @@ in {
       epkgs.logos
       epkgs.macrostep
       epkgs.magit
+      epkgs.marginalia
       epkgs.markdown-mode
       epkgs.modus-themes
       epkgs.multi-vterm
