@@ -18,7 +18,6 @@
     ...
   }: {
     imports = [
-      ../../home/bin
       ../../home/git
       ../../home/lf
       ../../home/zsh
@@ -102,5 +101,4 @@
     "Ethernet Adaptor"
     "Thunderbolt Ethernet"
   ];
-
 }
