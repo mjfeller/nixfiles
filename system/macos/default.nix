@@ -27,6 +27,24 @@
   system.defaults.trackpad.Dragging = false;
   system.defaults.trackpad.TrackpadThreeFingerDrag = true;
 
+  system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
+
+  system.defaults.finder.CreateDesktop = false;
+  system.defaults.finder.FXPreferredViewStyle = "Nlsv";
+  system.defaults.finder.NewWindowTarget = "Home";
+  system.defaults.finder.ShowPathbar = true;
+  system.defaults.finder._FXSortFoldersFirst = true;
+
+  system.defaults.loginwindow.GuestEnabled = false;
+
+  system.defaults.menuExtraClock.ShowAMPM = false;
+  system.defaults.menuExtraClock.ShowDate = 2;
+  system.defaults.menuExtraClock.ShowDayOfWeek = false;
+
+  system.startup.chime = false;
+
+  time.timeZone = "America/Denver";
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
