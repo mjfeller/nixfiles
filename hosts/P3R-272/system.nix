@@ -16,8 +16,6 @@
   # command 'should' be in the next release of nixos. As for when flakes
   # become mainlined who knows.
   nix.settings.trusted-users = ["root" "mjf"];
-  nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 30d";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
