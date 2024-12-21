@@ -18,8 +18,6 @@
     ...
   }: {
     imports = [
-      ../../home/alacritty
-      ../../home/bin
       ../../home/git/work.nix
       ../../home/lf
       ../../home/zsh
@@ -91,4 +89,19 @@
   programs.gnupg.agent.enableSSHSupport = true;
 
   programs.man.enable = true;
+
+  networking.computerName = "P2S-4C3";
+  networking.localHostName = "P2S-4C3";
+  networking.hostName = "P2S-4C3";
+
+  networking.dns = [
+    "8.8.8.8"
+    "8.8.4.4"
+  ];
+
+  networking.knownNetworkServices = [
+    "Wi-Fi"
+    "Ethernet Adaptor"
+    "Thunderbolt Ethernet"
+  ];
 }
