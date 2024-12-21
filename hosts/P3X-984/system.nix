@@ -18,8 +18,6 @@
     ...
   }: {
     imports = [
-      ../../home/alacritty
-      ../../home/bin
       ../../home/git
       ../../home/lf
       ../../home/zsh
@@ -39,9 +37,21 @@
     # paths it should manage.
     home.username = "mjf";
     home.homeDirectory = "/Users/mjf";
+    home.packages = with pkgs; [
+      brave
+      mpv
+      spotify
+      yubikey-manager
+    ];
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
+  };
+
+  # Setup primary user
+  users.users.mjf = {
+    name = "mjf";
+    home = "/Users/mjf";
   };
 
   # Add in the experimental nix command line tool and flakes. The nix
@@ -51,11 +61,8 @@
   nix.gc.automatic = true;
   nix.gc.options = "--delete-older-than 30d";
 
-  # Setup primary user
-  users.users.mjf = {
-    name = "mjf";
-    home = "/Users/mjf";
-  };
+  # Auto upgrade nix package and the daemon service.
+  services.nix-daemon.enable = true;
 
   # List of installed packages specific to this host.
   environment.systemPackages = with pkgs; [
@@ -63,9 +70,6 @@
     ispell
     mediainfo
   ];
-
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
 
   # ZSH Basic Configuration
   programs.zsh.enable = true;
@@ -75,4 +79,20 @@
   programs.gnupg.agent.enableSSHSupport = true;
 
   programs.man.enable = true;
+
+  networking.computerName = "P3X-984";
+  networking.localHostName = "P3X-984";
+  networking.hostName = "P3X-984";
+
+  networking.dns = [
+    "192.168.2.1"
+    "8.8.8.8"
+    "8.8.4.4"
+  ];
+
+  networking.knownNetworkServices = [
+    "Wi-Fi"
+    "Ethernet Adaptor"
+    "Thunderbolt Ethernet"
+  ];
 }
