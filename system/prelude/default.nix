@@ -13,12 +13,14 @@
     file
     fzf
     git
+    gnupg
     htop
     inetutils
     jq
     lf
     lsof
     netcat
+    openssh
     ripgrep
     rsync
     tree

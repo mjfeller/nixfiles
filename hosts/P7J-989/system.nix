@@ -60,18 +60,26 @@
   nix.settings.trusted-users = ["root" "mjf"];
   nix.gc.automatic = true;
   nix.gc.options = "--delete-older-than 30d";
+  nix.settings.substituters = [
+    "https://nix-community.cachix.org"
+    "https://cache.nixos.org/"
+  ];
+  nix.settings.trusted-public-keys = [
+    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  ];
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
   # List of installed packages specific to this host.
   environment.systemPackages = with pkgs; [
+    comma
     direnv
     go
-    gnupg
     ispell
     jujutsu
     mediainfo
+    nix-index
     shellcheck
     zig
     zls
