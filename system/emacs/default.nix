@@ -10,6 +10,7 @@
 in {
   environment.systemPackages = with pkgs; [
     ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
+      epkgs.cape
       epkgs.company
       epkgs.comment-dwim-2
       epkgs.consult
@@ -57,6 +58,8 @@ in {
       epkgs.treesit-grammars.with-all-grammars
       epkgs.vertico
       epkgs.vterm
+      epkgs.yasnippet
+      epkgs.yasnippet-snippets
       epkgs.zig-mode
     ]))
   ];
