@@ -37,12 +37,7 @@
     # paths it should manage.
     home.username = "mjf";
     home.homeDirectory = "/Users/mjf";
-    home.packages = with pkgs; [
-      brave
-      mpv
-      spotify
-      yubikey-manager
-    ];
+    home.packages = with pkgs; [];
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
@@ -66,11 +61,17 @@
     go
     ispell
     jujutsu
+    ledger
     mediainfo
     nix-index
     shellcheck
     zig
     zls
+
+    brave
+    mpv
+    spotify
+    yubikey-manager
   ];
 
   # ZSH Basic Configuration
