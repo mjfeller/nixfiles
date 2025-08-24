@@ -52,6 +52,7 @@
   # command 'should' be in the next release of nixos. As for when flakes
   # become mainlined who knows.
   nix.settings.trusted-users = ["root" "mfeller"];
+  nix.enable = false;
 
   # List of installed packages specific to this host.
   environment.systemPackages = with pkgs; [

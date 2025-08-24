@@ -1,12 +1,11 @@
 {
-  config,
   pkgs,
   ...
 }: let
   emacs =
     if pkgs.stdenv.isLinux
     then pkgs.emacs-pgtk
-    else pkgs.emacs-git;
+    else (pkgs.emacs-git.override {  withNativeCompilation = true; });
 in {
   environment.systemPackages = with pkgs; [
     ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [

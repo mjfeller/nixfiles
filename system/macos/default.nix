@@ -3,12 +3,14 @@
   pkgs,
   ...
 }: {
+  system.primaryUser = "mfeller";
+
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
 
   # Make sudo use Touch ID for easier auth
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # Remap caps lock to control like a sane person
   system.keyboard.enableKeyMapping = true;

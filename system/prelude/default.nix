@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  nix.gc.automatic = true;
+  # nix.gc.automatic = true;
   nix.gc.options = "--delete-older-than 30d";
   nix.settings.substituters = [
     "https://nix-community.cachix.org"
@@ -14,9 +14,6 @@
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.package = pkgs.nix;
-
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
 
   environment.systemPackages = with pkgs; [
     curl
