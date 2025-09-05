@@ -10,7 +10,6 @@
     ".config/zsh/.zshrc".source = ./files/.config/zsh/.zshrc;
     ".config/zsh/aliasrc".source = ./files/.config/zsh/aliasrc;
     ".config/zsh/fzf.zsh".source = ./files/.config/zsh/fzf.zsh;
-    ".config/zsh/gcloud.zsh".source = ./files/.config/zsh/gcloud.zsh;
     ".config/zsh/kubernetes.zsh".source = ./files/.config/zsh/kubernetes.zsh;
   };
 
