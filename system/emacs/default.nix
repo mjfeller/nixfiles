@@ -10,7 +10,6 @@ in {
   environment.systemPackages = with pkgs; [
     ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
       epkgs.cape
-      epkgs.company
       epkgs.comment-dwim-2
       epkgs.consult
       epkgs.corfu
@@ -18,7 +17,6 @@ in {
       epkgs.cue-mode
       epkgs.denote
       epkgs.direnv
-      epkgs.elfeed
       epkgs.ef-themes
       epkgs.embark
       epkgs.embark-consult
@@ -27,7 +25,9 @@ in {
       epkgs.evil-surround
       epkgs.evil-textobj-tree-sitter
       epkgs.exec-path-from-shell
+      epkgs.focus
       epkgs.git-timemachine
+      epkgs.gptel
       epkgs.hcl-mode
       epkgs.helpful
       epkgs.ledger-mode
@@ -43,7 +43,6 @@ in {
       epkgs.notmuch
       epkgs.ns-auto-titlebar
       epkgs.olivetti
-      epkgs.osm
       epkgs.orderless
       epkgs.org-bullets
       epkgs.paren-face
@@ -52,9 +51,9 @@ in {
       epkgs.rg
       epkgs.spacious-padding
       epkgs.terraform-mode
-      epkgs.tsc
       epkgs.tree-sitter
       epkgs.treesit-grammars.with-all-grammars
+      epkgs.tsc
       epkgs.vertico
       epkgs.vterm
       epkgs.yasnippet

@@ -26,9 +26,9 @@ export PATH=$GOPATH/bin:$PATH
 export PASH_TIMEOUT=off
 export PASH_KEYID="AD1123AE40116CBA25464FA10B54905CC58C10EE"
 case "$(uname -s)" in
-    # Linux*)  export PASH_CLIP="xclip -i -selection clipboard" ;;
-    Linux*)  export PASH_CLIP="wl-copy" ;;
-    Darwin*) export PASH_CLIP="pbcopy"   ;;
+	# Linux*)  export PASH_CLIP="xclip -i -selection clipboard" ;;
+	Linux*)  export PASH_CLIP="wl-copy" ;;
+	Darwin*) export PASH_CLIP="pbcopy"   ;;
 esac
 
 # GPG config
@@ -46,17 +46,17 @@ export NVM_DIR=$XDG_CONFIG_HOME/nvm
 
 declare -a BEMENU_OPTIONS
 BEMENU_OPTIONS=(
-    --ignorecase
-    --line-height 20
-    --border 1
-    --fn "'Iosevka Comfy Wide Motion 10'"
-    --fb '#000000'
-    --cb '#000000'
-    --nb '#000000'
-    --hb '#000000'
-    --ab '#000000'
-    --tf '#44bc44'
-    --hf '#44bc44'
-    --bdr '#FFFFFF'
+	--ignorecase
+	--line-height 20
+	--border 1
+	--fn "'Iosevka Comfy Wide Motion 10'"
+	--fb '#000000'
+	--cb '#000000'
+	--nb '#000000'
+	--hb '#000000'
+	--ab '#000000'
+	--tf '#44bc44'
+	--hf '#44bc44'
+	--bdr '#FFFFFF'
 )
 export BEMENU_OPTS="${BEMENU_OPTIONS[@]}"
