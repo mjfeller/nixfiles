@@ -43,6 +43,9 @@
     programs.home-manager.enable = true;
   };
 
+  system.primaryUser = "mjf";
+  ids.gids.nixbld = 350;
+
   # Setup primary user
   users.users.mjf = {
     name = "mjf";

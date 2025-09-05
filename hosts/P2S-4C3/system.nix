@@ -42,6 +42,8 @@
     programs.home-manager.enable = true;
   };
 
+  system.primaryUser = "mfeller";
+
   # Setup primary user
   users.users.mfeller = {
     name = "mfeller";
