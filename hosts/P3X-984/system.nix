@@ -20,6 +20,7 @@
     imports = [
       ../../home/git
       ../../home/lf
+      ../../home/xdg
       ../../home/zsh
     ];
 

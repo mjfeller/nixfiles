@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  config.xdg.cacheHome = "${config.home.homeDirectory}/.cache";
+  config.xdg.configHome = "${config.home.homeDirectory}/.config";
+  config.xdg.dataHome = "${config.home.homeDirectory}/.local";
+
   # xdg mime types allows default applications to be used to open files
   # of a specific type. The file type of an application can be
   # determined using the mimetype utility.
