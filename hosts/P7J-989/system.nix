@@ -18,6 +18,7 @@
     ...
   }: {
     imports = [
+      ../../home/bin
       ../../home/git
       ../../home/lf
       ../../home/xdg
