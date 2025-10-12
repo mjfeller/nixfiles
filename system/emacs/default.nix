@@ -58,7 +58,7 @@ in {
       epkgs.vterm
       epkgs.yasnippet
       epkgs.yasnippet-snippets
-      epkgs.zig-mode
+      #epkgs.zig-mode
     ]))
   ];
 }
