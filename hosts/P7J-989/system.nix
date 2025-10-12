@@ -68,14 +68,17 @@
     jujutsu
     ledger
     mediainfo
+    mpv
     nix-index
     shellcheck
+    syncthing
     zig
     zls
 
     brave
-    mpv
+    signal-desktop-bin
     spotify
+    whatsapp-for-mac
     yubikey-manager
   ];
 

@@ -5,7 +5,7 @@
 }: {
   home.file = {
     # zsh configuration
-    # ".zshenv".source = ./files/.zshenv;
+    ".zshenv".source = ./files/.zshenv;
     ".config/zsh/.zshenv".source = ./files/.config/zsh/.zshenv;
     ".config/zsh/.zshrc".source = ./files/.config/zsh/.zshrc;
     ".config/zsh/aliasrc".source = ./files/.config/zsh/aliasrc;
@@ -18,7 +18,7 @@
   # "Zsh Web Pages" sites.
   programs.zsh = {
     enable = true;
-    # dotDir = ".config/zsh";
+    dotDir = ".config/zsh";
     history.size = 10000;
     history.path = "${config.xdg.cacheHome}/zsh/history";
   };
