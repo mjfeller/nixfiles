@@ -71,7 +71,6 @@
     mpv
     nix-index
     shellcheck
-    syncthing
     zig
     zls
 

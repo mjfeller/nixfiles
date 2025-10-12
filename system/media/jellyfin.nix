@@ -32,6 +32,10 @@
   # Indexer manager/proxy built on the popular arr .net/reactjs base stack.
   services.prowlarr.enable = true;
 
+  services.syncthing.enable = true;
+  services.syncthing.group = "margartv";
+  services.syncthing.guiAddress = "0.0.0.0:8384";
+
   # ----------------------------------------------------------------------
   #  Site
 
