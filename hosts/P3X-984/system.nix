@@ -49,6 +49,8 @@
     programs.home-manager.enable = true;
   };
 
+  system.primaryUser = "mjf";
+
   # Setup primary user
   users.users.mjf = {
     name = "mjf";
@@ -62,9 +64,11 @@
 
   # List of installed packages specific to this host.
   environment.systemPackages = with pkgs; [
+    brave
     direnv
     ispell
     mediainfo
+    mpv
   ];
 
   # ZSH Basic Configuration
