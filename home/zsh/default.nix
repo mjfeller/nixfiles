@@ -18,7 +18,7 @@
   # "Zsh Web Pages" sites.
   programs.zsh = {
     enable = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
     history.size = 10000;
     history.path = "${config.xdg.cacheHome}/zsh/history";
   };
