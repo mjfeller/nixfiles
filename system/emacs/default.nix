@@ -6,9 +6,24 @@
     if pkgs.stdenv.isLinux
     then pkgs.emacs-pgtk
     else (pkgs.emacs-git.override {  withNativeCompilation = true; });
+
+  # Custom Emacs packages
+  customEmacsPackages = epkgs: {
+    acp = epkgs.callPackage ./packages/acp.nix { };
+    agent-shell = epkgs.callPackage ./packages/agent-shell.nix {
+      acp = (customEmacsPackages epkgs).acp;
+      shell-maker = epkgs.shell-maker;
+    };
+  };
 in {
   environment.systemPackages = with pkgs; [
-    ((emacsPackagesFor emacs).emacsWithPackages (epkgs: [
+    ((emacsPackagesFor emacs).emacsWithPackages (epkgs: let
+      custom = customEmacsPackages epkgs;
+    in [
+      # Custom packages
+      custom.acp
+      custom.agent-shell
+      # Standard packages
       epkgs.cape
       epkgs.comment-dwim-2
       epkgs.consult
@@ -49,6 +64,7 @@ in {
       epkgs.reformatter
       epkgs.restclient
       epkgs.rg
+      epkgs.shell-maker
       epkgs.spacious-padding
       epkgs.terraform-mode
       epkgs.tree-sitter
