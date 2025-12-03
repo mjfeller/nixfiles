@@ -5,12 +5,12 @@
 }: {
   programs.git = {
     enable = true;
-    userName = "Mark Feller";
-    userEmail = "mark@block.xyz";
     signing.key = "AD1123AE40116CBA25464FA10B54905CC58C10EE";
     signing.signByDefault = false;
 
-    extraConfig = {
+    settings = {
+      user.name = "Mark Feller";
+      user.email = "mark@block.xyz";
       github.user = "mfeller-square";
     };
 
