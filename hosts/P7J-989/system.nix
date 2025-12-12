@@ -70,14 +70,12 @@
     mediainfo
     mpv
     nix-index
+    opencode
     shellcheck
     zig
     zls
 
     brave
-    signal-desktop-bin
-    spotify
-    whatsapp-for-mac
     yubikey-manager
   ];
 
