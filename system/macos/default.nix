@@ -22,6 +22,7 @@
   system.defaults.dock.show-recents = false;
   system.defaults.dock.static-only = true;
   system.defaults.dock.tilesize = 64;
+  system.defaults.dock.mru-spaces = false;
 
   system.defaults.trackpad.Clicking = true;
   system.defaults.trackpad.Dragging = false;
